@@ -1,0 +1,15 @@
+{
+  "size": [1080, 1440],
+  "layout": "full",
+  "photos": ["photos/demo_flatlay.jpg"],
+  "grade": {"brightness": 1.03, "warmth": 6, "fade": 12},
+  "elements": [
+    {"type": "label",  "text": "one", "x": 0.2, "y": 0.09, "size": 0.06},
+    {"type": "label",  "text": "6 am - 10 pm", "x": 0.56, "y": 0.2, "size": 0.032},
+    {"type": "script", "text": "Day\nin my\nLife", "x": 0.55, "y": 0.45, "size": 0.26,
+     "line_height": 0.95, "offsets": [0.05, -0.02, 0.06], "rotate": -8},
+    {"type": "caption","text": "as a full time content creator + illustrator girlie in istanbul",
+     "x": 0.5, "y": 0.8, "size": 0.026, "width": 0.42},
+    {"type": "pill",   "text": "NOVEMBER", "x": 0.5, "y": 0.88}
+  ]
+}

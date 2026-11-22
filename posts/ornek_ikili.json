@@ -1,0 +1,11 @@
+{
+  "layout": "stack2",
+  "photos": ["photos/demo_cups.jpg", "photos/demo_shelf.jpg"],
+  "elements": [
+    {"type": "clock", "time": "08:22", "x": 0.71, "y": 0.33, "color": "clock_pink"},
+    {"type": "caption", "text": "grabbing a matcha before heading to the office 🍵💚 because priorities",
+     "x": 0.06, "y": 0.6, "align": "left", "width": 0.42},
+    {"type": "script", "text": "matcha\ntime", "font": "script2", "x": 0.75, "y": 0.8, "size": 0.12, "color": "white", "rotate": 6},
+    {"type": "star", "style": "yellow", "x": 0.86, "y": 0.45, "size": 0.03}
+  ]
+}
