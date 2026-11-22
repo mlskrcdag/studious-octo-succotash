@@ -1,0 +1,7 @@
+{ "layout": "full", "photos": ["photos/nespresso.jpg"], "focus": [[0.5, 0.6]], "grade": {"brightness": 1.03, "warmth": 6, "fade": 12},
+  "elements": [
+    {"type": "caption", "text": "günün ilk kahvesi ☕️✨", "x": 0.73, "y": 0.1, "width": 0.45, "color": "#5A4A3F", "shadow": 0},
+    {"type": "clock", "time": "12:00", "x": 0.73, "y": 0.19},
+    {"type": "star", "style": "yellow", "x": 0.9, "y": 0.47, "size": 0.025},
+    {"type": "star", "style": "white", "x": 0.33, "y": 0.62, "size": 0.018}
+  ] }

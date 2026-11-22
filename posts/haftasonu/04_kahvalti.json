@@ -1,0 +1,7 @@
+{ "layout": "full", "photos": ["photos/kahvalti.jpg"], "focus": [[0.5, 0.42]], "grade": {"brightness": 1.03, "warmth": 6, "fade": 12},
+  "elements": [
+    {"type": "caption", "text": "haftasonu kahvaltısından minimum beklentim 🍳🧡", "x": 0.5, "y": 0.06, "width": 0.62, "color": "#5A4A3F", "shadow": 0},
+    {"type": "clock", "time": "12:30", "x": 0.17, "y": 0.27, "size": 0.055, "color": "clock_pink"},
+    {"type": "script", "text": "toro da\nmasada", "font": "script2", "x": 0.83, "y": 0.27, "size": 0.085, "color": "white", "rotate": 6, "shadow": 160},
+    {"type": "star", "style": "yellow", "x": 0.9, "y": 0.88, "size": 0.028}
+  ] }

@@ -1,0 +1,78 @@
+{
+ "layout": "full",
+ "photos": [
+  "photos/gokyuzu.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.45
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 6,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "label",
+   "text": "one",
+   "x": 0.14,
+   "y": 0.08,
+   "size": 0.06
+  },
+  {
+   "type": "label",
+   "text": "11 am - 4 pm",
+   "x": 0.58,
+   "y": 0.15,
+   "size": 0.032,
+   "color": "white"
+  },
+  {
+   "type": "script",
+   "text": "Day\nin my\nLife",
+   "x": 0.52,
+   "y": 0.37,
+   "size": 0.25,
+   "offsets": [
+    0.05,
+    -0.02,
+    0.06
+   ],
+   "rotate": -8,
+   "shadow": 110
+  },
+  {
+   "type": "caption",
+   "text": "yavaş bir haftasonu günü: toro, kahve ve anneanne 🤍",
+   "x": 0.5,
+   "y": 0.755,
+   "size": 0.03,
+   "width": 0.56,
+   "shadow": 200
+  },
+  {
+   "type": "pill",
+   "text": "NOVEMBER",
+   "x": 0.5,
+   "y": 0.845,
+   "alpha": 90
+  },
+  {
+   "type": "star",
+   "style": "white",
+   "x": 0.85,
+   "y": 0.1,
+   "size": 0.02
+  },
+  {
+   "type": "star",
+   "style": "white",
+   "x": 0.12,
+   "y": 0.62,
+   "size": 0.015
+  }
+ ]
+}

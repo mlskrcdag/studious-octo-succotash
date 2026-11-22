@@ -1,0 +1,10 @@
+{ "layout": "stack2",
+  "photos": ["photos/turk_kahvesi_manzara.jpg", "photos/turk_kahvesi_yakin.jpg"],
+  "focus": [[0.5, 0.5], [0.5, 0.6]], "grade": {"brightness": 1.03, "warmth": 6, "fade": 12},
+  "elements": [
+    {"type": "clock", "time": "15:00", "x": 0.5, "y": 0.1},
+    {"type": "caption", "text": "anneannemle türk kahvesi saati ☕️🤍", "x": 0.5, "y": 0.19, "width": 0.6, "shadow": 140},
+    {"type": "script", "text": "fal\nzamanı", "font": "script2", "x": 0.78, "y": 0.62, "size": 0.1, "color": "white", "rotate": 6, "shadow": 140},
+    {"type": "star", "style": "polka", "x": 0.12, "y": 0.6, "size": 0.05, "rotate": -10},
+    {"type": "star", "style": "white", "x": 0.88, "y": 0.9, "size": 0.018}
+  ] }

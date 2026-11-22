@@ -1,0 +1,49 @@
+{
+ "layout": "full",
+ "photos": [
+  "photos/toro_yuruyus.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.4
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 6,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "caption",
+   "text": "toro ve ben geç uyandık, parkta yürüyüş 🐾🍂",
+   "x": 0.5,
+   "y": 0.09,
+   "width": 0.75,
+   "shadow": 230,
+   "size": 0.033
+  },
+  {
+   "type": "clock",
+   "time": "11:00",
+   "x": 0.5,
+   "y": 0.19
+  },
+  {
+   "type": "star",
+   "style": "polka",
+   "x": 0.83,
+   "y": 0.72,
+   "size": 0.065,
+   "rotate": 12
+  },
+  {
+   "type": "star",
+   "style": "white",
+   "x": 0.15,
+   "y": 0.33,
+   "size": 0.018
+  }
+ ]
+}
