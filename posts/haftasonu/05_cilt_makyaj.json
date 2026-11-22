@@ -29,15 +29,15 @@
    "type": "clock",
    "time": "13:30",
    "x": 0.2,
-   "y": 0.34,
+   "y": 0.38,
    "size": 0.055
   },
   {
    "type": "caption",
-   "text": "cilt bakımı & makyaj 🫧💄",
-   "x": 0.78,
-   "y": 0.66,
-   "width": 0.38,
+   "text": "cilt bakımı & makyaj 🫧💄🧴🪞💖✨",
+   "x": 0.79,
+   "y": 0.5,
+   "width": 0.36,
    "shadow": 160
   },
   {
@@ -46,6 +46,22 @@
    "x": 0.07,
    "y": 0.62,
    "size": 0.018
+  },
+  {
+   "type": "emoji",
+   "text": "🫧",
+   "x": 0.1,
+   "y": 0.5,
+   "size": 0.06,
+   "rotate": -10
+  },
+  {
+   "type": "emoji",
+   "text": "💄",
+   "x": 0.92,
+   "y": 0.85,
+   "size": 0.065,
+   "rotate": 15
   }
  ],
  "splits": [

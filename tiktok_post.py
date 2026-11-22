@@ -361,9 +361,21 @@ def el_pill(base, e, W, H):
     base.alpha_composite(layer)
 
 
+def el_emoji(base, e, W, H):
+    """Tek başına emoji sticker'ı (ör. 🐾, 🍊), isteğe bağlı döndürme."""
+    em = _emoji_img(e["text"], e.get("size", 0.08) * W)
+    if em is None:
+        return
+    if e.get("rotate"):
+        em = em.rotate(e["rotate"], resample=Image.BICUBIC, expand=True)
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    layer.alpha_composite(em, (int(e.get("x", 0.5) * W - em.width / 2), int(e.get("y", 0.5) * H - em.height / 2)))
+    shadowed(base, layer, em.width * 0.06, e.get("shadow", 50))
+
+
 ELEMENTS = {
     "caption": el_caption, "script": el_script, "label": el_label,
-    "clock": el_clock, "star": el_star, "pill": el_pill,
+    "clock": el_clock, "star": el_star, "pill": el_pill, "emoji": el_emoji,
 }
 
 

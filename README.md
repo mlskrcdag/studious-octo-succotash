@@ -25,5 +25,6 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
   - `clock` — `time: "08:22"`, `style: glass` (varsayılan: buzlu cam, şeffaf) `| solid`, `color`
   - `star` — `style: white | yellow | polka`, `rotate`
   - `pill` — konum/ay hapı, `icon: true/false`
+  - `emoji` — tek emoji sticker: `text`, `size`, `rotate`
 
 Fontlar `fonts/` içinde (Google Fonts, OFL lisansı; Inter de OFL).

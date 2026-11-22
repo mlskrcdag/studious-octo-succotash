@@ -43,7 +43,7 @@ Fotoğraflar canlı ama sıcak; vurgu renkleri: pembe, kobalt mavi, matcha yeşi
 6. (İsteğe bağlı) Piksel el imleci 👉 gibi küçük ironik sticker'lar.
 
 ## 5. Kapak şablonu
-(Kullanıcı tercihi: başlık düz/eğiksiz, "one" ve saat aralığı yok, hapta Türkçe tarih ör. "22 Kasım".)
+(Kullanıcı tercihi: başlık Türkçe "Benimle / bir / Gün", düz/eğiksiz, "one" ve saat aralığı yok, hapta Türkçe tarih ör. "22 Kasım".)
 - Ayna selfie / tam boy outfit fotoğrafı
 - Sol üst: "one" (blush, ince)
 - Ortada çapraz: **Day / in my / Life** (Pinyon Script, krem, dev boy)

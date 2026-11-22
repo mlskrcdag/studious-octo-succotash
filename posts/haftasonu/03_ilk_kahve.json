@@ -17,9 +17,9 @@
  "elements": [
   {
    "type": "caption",
-   "text": "günün ilk kahvesi ☕️✨",
+   "text": "günün ilk kahvesi ☕️✨🌸🤎💫",
    "x": 0.73,
-   "y": 0.1,
+   "y": 0.2,
    "width": 0.45,
    "color": "#5A4A3F",
    "shadow": 0
@@ -28,7 +28,7 @@
    "type": "clock",
    "time": "12:00",
    "x": 0.73,
-   "y": 0.19
+   "y": 0.29
   },
   {
    "type": "star",
@@ -43,6 +43,22 @@
    "x": 0.33,
    "y": 0.62,
    "size": 0.018
+  },
+  {
+   "type": "emoji",
+   "text": "🌸",
+   "x": 0.6,
+   "y": 0.4,
+   "size": 0.06,
+   "rotate": -10
+  },
+  {
+   "type": "emoji",
+   "text": "☕️",
+   "x": 0.9,
+   "y": 0.62,
+   "size": 0.06,
+   "rotate": 12
   }
  ]
 }

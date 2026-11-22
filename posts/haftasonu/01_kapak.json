@@ -17,10 +17,10 @@
  "elements": [
   {
    "type": "script",
-   "text": "Day\nin my\nLife",
+   "text": "Benimle\nbir\nGün",
    "x": 0.5,
-   "y": 0.34,
-   "size": 0.25,
+   "y": 0.3,
+   "size": 0.185,
    "offsets": [
     0,
     0,
@@ -31,9 +31,9 @@
   },
   {
    "type": "caption",
-   "text": "sakin bir pazar günü: toro, kahve ve anneanne 🤍",
+   "text": "sakin bir pazar günü: toro, kahve ve anneanne 🤍☁️🍂☕️",
    "x": 0.5,
-   "y": 0.755,
+   "y": 0.6,
    "size": 0.03,
    "width": 0.56,
    "shadow": 200
@@ -42,14 +42,14 @@
    "type": "pill",
    "text": "22 Kasım",
    "x": 0.5,
-   "y": 0.845,
+   "y": 0.685,
    "alpha": 90
   },
   {
    "type": "star",
    "style": "white",
-   "x": 0.85,
-   "y": 0.1,
+   "x": 0.88,
+   "y": 0.07,
    "size": 0.02
   },
   {
@@ -58,6 +58,22 @@
    "x": 0.12,
    "y": 0.62,
    "size": 0.015
+  },
+  {
+   "type": "emoji",
+   "text": "☁️",
+   "x": 0.86,
+   "y": 0.33,
+   "size": 0.08,
+   "rotate": 8
+  },
+  {
+   "type": "emoji",
+   "text": "🍂",
+   "x": 0.15,
+   "y": 0.47,
+   "size": 0.065,
+   "rotate": -12
   }
  ]
 }
