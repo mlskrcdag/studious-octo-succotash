@@ -35,7 +35,7 @@ Genel his: **sıcak, yumuşak, günlük/vlog**; fotoğraf ön planda, yazılar k
 Fotoğraflar canlı ama sıcak; vurgu renkleri: pembe, kobalt mavi, matcha yeşili, turuncu.
 
 ## 4. İmza öğeler
-1. **Flip-clock saat damgası** — 4 ayrı yuvarlak köşeli açık gri karo, ortadan geçen ince çizgi. Kapak hariç her slaytta; genelde caption'ın hemen altında veya fotoğrafın boş köşesinde.
+1. **Flip-clock saat damgası** — 4 ayrı yuvarlak köşeli karo, ortadan geçen ince çizgi. **Kullanıcı tercihi: şeffaf/buzlu cam karolar + beyaz rakam (varsayılan `glass`)**, pembe kullanma. Kapak hariç her slaytta; genelde caption'ın hemen altında veya fotoğrafın boş köşesinde.
 2. **Caption** — ortalanmış (veya bölünmüş slaytta sola yaslı), genişliğin ~%40–60'ı, fotoğrafın boş/koyu alanına.
 3. **Yıldız sticker'ları** — küçük beyaz dolu yıldızlar, bir adet büyük puantiyeli (polka) yıldız, sarı ⭐ emoji. 2–4 adet, köşelere dağınık.
 4. **Konum hapı** — yarı saydam beyaz yuvarlak kutu + pin ikonu + BÜYÜK HARF metin (kapakta "FEBRUARY").
@@ -43,6 +43,7 @@ Fotoğraflar canlı ama sıcak; vurgu renkleri: pembe, kobalt mavi, matcha yeşi
 6. (İsteğe bağlı) Piksel el imleci 👉 gibi küçük ironik sticker'lar.
 
 ## 5. Kapak şablonu
+(Kullanıcı tercihi: başlık düz/eğiksiz, "one" ve saat aralığı yok, hapta Türkçe tarih ör. "22 Kasım".)
 - Ayna selfie / tam boy outfit fotoğrafı
 - Sol üst: "one" (blush, ince)
 - Ortada çapraz: **Day / in my / Life** (Pinyon Script, krem, dev boy)

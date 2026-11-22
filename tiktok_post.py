@@ -128,6 +128,18 @@ def fit(img, w, h, focus=(0.5, 0.5)):
     return ImageOps.fit(img, (w, h), Image.LANCZOS, centering=tuple(focus))
 
 
+def straighten(img, deg):
+    """Fotoğrafı deg derece döndür (+ saat yönünün tersi), boş köşeleri kırp."""
+    if not deg:
+        return img
+    w, h = img.size
+    r = img.rotate(deg, resample=Image.BICUBIC)
+    t = math.radians(abs(deg))
+    s = 1 / (math.cos(t) + math.sin(t) * max(w / h, h / w))
+    cw, ch = int(w * s), int(h * s)
+    return r.crop(((w - cw) // 2, (h - ch) // 2, (w + cw) // 2, (h + ch) // 2))
+
+
 def load(path):
     p = Path(path)
     if not p.is_absolute():
@@ -140,20 +152,30 @@ def build_base(spec):
     layout = spec.get("layout", "full")
     photos = spec["photos"]
     foc = spec.get("focus", [[0.5, 0.5]] * len(photos))
+    rots = spec.get("rotate", [0] * len(photos))
+    _load = load
+    load_r = lambda i: straighten(_load(photos[i]), rots[i])
     canvas = Image.new("RGB", (W, H), "white")
     split = spec.get("split", 0.5)
     if layout == "full":
-        canvas.paste(fit(load(photos[0]), W, H, foc[0]), (0, 0))
+        canvas.paste(fit(load_r(0), W, H, foc[0]), (0, 0))
     elif layout == "stack2":            # üst + alt (görsel 1, 3, 4)
         h1 = int(H * split)
-        canvas.paste(fit(load(photos[0]), W, h1, foc[0]), (0, 0))
-        canvas.paste(fit(load(photos[1]), W, H - h1, foc[1]), (0, h1))
+        canvas.paste(fit(load_r(0), W, h1, foc[0]), (0, 0))
+        canvas.paste(fit(load_r(1), W, H - h1, foc[1]), (0, h1))
     elif layout == "top_split":         # üstte tek, altta yan yana iki (görsel 2)
         h1 = int(H * split)
-        canvas.paste(fit(load(photos[0]), W, h1, foc[0]), (0, 0))
+        canvas.paste(fit(load_r(0), W, h1, foc[0]), (0, 0))
         w2 = W // 2
-        canvas.paste(fit(load(photos[1]), w2, H - h1, foc[1]), (0, h1))
-        canvas.paste(fit(load(photos[2]), W - w2, H - h1, foc[2]), (w2, h1))
+        canvas.paste(fit(load_r(1), w2, H - h1, foc[1]), (0, h1))
+        canvas.paste(fit(load_r(2), W - w2, H - h1, foc[2]), (w2, h1))
+    elif layout == "stack3":            # üç yatay bant, üstten alta
+        fr = spec.get("splits", [1 / 3, 1 / 3, 1 / 3])
+        y = 0
+        for i in range(3):
+            h = H - y if i == 2 else int(H * fr[i])
+            canvas.paste(fit(load_r(i), W, h, foc[i]), (0, y))
+            y += h
     else:
         raise ValueError(f"bilinmeyen layout: {layout}")
     return canvas.convert("RGBA")
@@ -224,7 +246,8 @@ def el_label(base, e, W, H):
 
 
 def el_clock(base, e, W, H):
-    """Flip-clock saat damgası: 4 açık gri karo, ortasında ince çizgi."""
+    """Flip-clock saat damgası. style='glass' (varsayılan): buzlu cam, şeffaf karolar,
+    beyaz rakam. style='solid': açık gri dolu karolar."""
     digits = e["time"].replace(":", "")
     tile_w = e.get("size", 0.065) * W
     tile_h = tile_w * 1.42
@@ -233,19 +256,36 @@ def el_clock(base, e, W, H):
     x0 = e.get("x", 0.5) * W - total / 2
     y0 = e.get("y", 0.2) * H - tile_h / 2
     f = font("sans_medium", tile_h * 0.86)
-    ink = rgba(e.get("color", "clock_ink"))
+    glass = e.get("style", "glass") == "glass"
+    ink = rgba(e.get("color", "white" if glass else "clock_ink"))
+    rad = tile_w * 0.14
+    boxes = [[x0 + i * (tile_w + gap), y0, x0 + i * (tile_w + gap) + tile_w, y0 + tile_h] for i in range(4)]
+    if glass:
+        # arkadaki fotoğrafı bulanıklaştır (buzlu cam), üstüne çok hafif beyaz
+        mask = Image.new("L", base.size, 0)
+        md = ImageDraw.Draw(mask)
+        for b in boxes:
+            md.rounded_rectangle(b, radius=rad, fill=255)
+        blurred = base.filter(ImageFilter.GaussianBlur(tile_w * 0.18))
+        base.paste(blurred, (0, 0), mask)
     layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
-    for i, ch in enumerate(digits[:4]):
-        x = x0 + i * (tile_w + gap)
-        d.rounded_rectangle([x, y0, x + tile_w, y0 + tile_h], radius=tile_w * 0.12,
-                            fill=rgba(e.get("bg", "clock_bg"), e.get("bg_alpha", 225)))
+    for b, ch in zip(boxes, digits[:4]):
+        if glass:
+            d.rounded_rectangle(b, radius=rad, fill=(255, 255, 255, e.get("bg_alpha", 45)),
+                                outline=(255, 255, 255, 140), width=max(1, int(tile_w * 0.025)))
+        else:
+            d.rounded_rectangle(b, radius=rad, fill=rgba(e.get("bg", "clock_bg"), e.get("bg_alpha", 225)))
         bb = d.textbbox((0, 0), ch, font=f)
-        d.text((x + (tile_w - (bb[2] - bb[0])) / 2 - bb[0],
+        d.text((b[0] + (tile_w - (bb[2] - bb[0])) / 2 - bb[0],
                 y0 + (tile_h - (bb[3] - bb[1])) / 2 - bb[1]), ch, font=f, fill=ink)
         my = y0 + tile_h / 2
-        d.line([x, my, x + tile_w, my], fill=(120, 120, 120, 170), width=max(1, int(tile_h * 0.018)))
-    shadowed(base, layer, tile_w * 0.15, e.get("shadow", 35))
+        line = (255, 255, 255, 110) if glass else (120, 120, 120, 170)
+        d.line([b[0], my, b[2], my], fill=line, width=max(1, int(tile_h * 0.018)))
+    if glass:
+        shadowed(base, layer, tile_w * 0.08, e.get("shadow", 60))
+    else:
+        shadowed(base, layer, tile_w * 0.15, e.get("shadow", 35))
 
 
 def _star_points(cx, cy, r, rot=-90, inner=0.42):

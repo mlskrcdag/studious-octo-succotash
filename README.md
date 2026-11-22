@@ -14,14 +14,15 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
 > `photos/` ve `output/` git'e eklenmez (kişisel fotoğraflar). Örnek JSON'lar `photos/demo_*.jpg` dosyalarını bekler; kendi fotoğraflarınla değiştir.
 
 ## JSON alanları
-- `layout`: `full` | `stack2` | `top_split`; `split`: bölme oranı (0.5)
+- `layout`: `full` | `stack2` | `top_split` | `stack3` (üç yatay bant, `splits: [0.28, 0.44, 0.28]`); `split`: bölme oranı (0.5)
+- `rotate`: her foto için düzeltme açısı (derece, eğik nesneyi düzeltmek için; ör. `[-7, 0]`)
 - `photos`: dosya yolları; `focus`: her foto için kırpma merkezi `[x, y]` (0–1)
 - `grade`: `brightness`, `contrast`, `saturation`, `warmth`, `fade`
 - `elements` (x, y ve size hep 0–1 arası oran):
   - `caption` — `text`, `align`, `width`, `size`
   - `script` — `text` (satırlar `\n`), `font` (`script`/`script2`/`script3`/`script4`), `offsets`, `rotate`, `color`
   - `label` — küçük ince yazı ("one", "6 am - 10 pm")
-  - `clock` — `time: "08:22"`, `color: clock_ink | clock_pink`
+  - `clock` — `time: "08:22"`, `style: glass` (varsayılan: buzlu cam, şeffaf) `| solid`, `color`
   - `star` — `style: white | yellow | polka`, `rotate`
   - `pill` — konum/ay hapı, `icon: true/false`
 

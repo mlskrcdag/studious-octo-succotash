@@ -17,7 +17,7 @@
  "elements": [
   {
    "type": "caption",
-   "text": "toro ve ben geç uyandık, parkta yürüyüş 🐾🍂",
+   "text": "bugün baya geç uyandık torişle, hava çok güzeldi ☀️🐶🐾🍂🌿💛",
    "x": 0.5,
    "y": 0.09,
    "width": 0.75,
@@ -44,6 +44,13 @@
    "x": 0.15,
    "y": 0.33,
    "size": 0.018
+  },
+  {
+   "type": "star",
+   "style": "yellow",
+   "x": 0.12,
+   "y": 0.55,
+   "size": 0.025
   }
  ]
 }

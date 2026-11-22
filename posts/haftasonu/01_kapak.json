@@ -16,37 +16,22 @@
  },
  "elements": [
   {
-   "type": "label",
-   "text": "one",
-   "x": 0.14,
-   "y": 0.08,
-   "size": 0.06
-  },
-  {
-   "type": "label",
-   "text": "11 am - 4 pm",
-   "x": 0.58,
-   "y": 0.15,
-   "size": 0.032,
-   "color": "white"
-  },
-  {
    "type": "script",
    "text": "Day\nin my\nLife",
-   "x": 0.52,
-   "y": 0.37,
+   "x": 0.5,
+   "y": 0.34,
    "size": 0.25,
    "offsets": [
-    0.05,
-    -0.02,
-    0.06
+    0,
+    0,
+    0
    ],
-   "rotate": -8,
+   "rotate": 0,
    "shadow": 110
   },
   {
    "type": "caption",
-   "text": "yavaş bir haftasonu günü: toro, kahve ve anneanne 🤍",
+   "text": "sakin bir pazar günü: toro, kahve ve anneanne 🤍",
    "x": 0.5,
    "y": 0.755,
    "size": 0.03,
@@ -55,7 +40,7 @@
   },
   {
    "type": "pill",
-   "text": "NOVEMBER",
+   "text": "22 Kasım",
    "x": 0.5,
    "y": 0.845,
    "alpha": 90
