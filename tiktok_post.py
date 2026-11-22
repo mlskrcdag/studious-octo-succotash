@@ -140,6 +140,29 @@ def straighten(img, deg):
     return r.crop(((w - cw) // 2, (h - ch) // 2, (w + cw) // 2, (h + ch) // 2))
 
 
+def keystone(img, quad):
+    """Perspektif düzeltme: quad = fotoğraftaki dikdörtgen nesnenin köşeleri
+    [sol-üst, sağ-üst, sağ-alt, sol-alt] (piksel). O nesne düz dikdörtgen olacak şekilde
+    bütün fotoğraf düzeltilir."""
+    if not quad:
+        return img
+    import numpy as np
+    (x0, y0), (x1, y1), (x2, y2), (x3, y3) = quad
+    L, R = (x0 + x3) / 2, (x1 + x2) / 2
+    T, B = (y0 + y1) / 2, (y2 + y3) / 2
+    dst = [(L, T), (R, T), (R, B), (L, B)]
+    A, bvec = [], []
+    for (u, v), (x, y) in zip(quad, dst):   # çıktı(x,y) -> girdi(u,v)
+        A.append([x, y, 1, 0, 0, 0, -u * x, -u * y]); bvec.append(u)
+        A.append([0, 0, 0, x, y, 1, -v * x, -v * y]); bvec.append(v)
+    coeffs = np.linalg.solve(np.array(A, float), np.array(bvec, float))
+    out = img.transform(img.size, Image.PERSPECTIVE, tuple(coeffs), Image.BICUBIC)
+    # kenarlarda oluşan siyah boşlukları kırp
+    m = 0.06
+    w, h = img.size
+    return out.crop((int(w * m), int(h * m), int(w * (1 - m)), int(h * (1 - m))))
+
+
 def load(path):
     p = Path(path)
     if not p.is_absolute():
@@ -154,7 +177,8 @@ def build_base(spec):
     foc = spec.get("focus", [[0.5, 0.5]] * len(photos))
     rots = spec.get("rotate", [0] * len(photos))
     _load = load
-    load_r = lambda i: straighten(_load(photos[i]), rots[i])
+    quads = spec.get("keystone", [None] * len(photos))
+    load_r = lambda i: straighten(keystone(_load(photos[i]), quads[i]), rots[i])
     canvas = Image.new("RGB", (W, H), "white")
     split = spec.get("split", 0.5)
     if layout == "full":

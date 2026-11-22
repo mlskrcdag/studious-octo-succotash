@@ -29,7 +29,7 @@
   },
   {
    "type": "caption",
-   "text": "akşam sineması: aşk tesadüfleri sever 3 🎬🍿❤️🎞️✨",
+   "text": "akşam sineması 🎬🍿❤️🎞️✨",
    "x": 0.5,
    "y": 0.65,
    "width": 0.62,
@@ -65,5 +65,26 @@
    "y": 0.8,
    "size": 0.025
   }
+ ],
+ "keystone": [
+  [
+   [
+    600,
+    595
+   ],
+   [
+    1245,
+    600
+   ],
+   [
+    1275,
+    1500
+   ],
+   [
+    618,
+    1545
+   ]
+  ],
+  null
  ]
 }
