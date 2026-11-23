@@ -66,6 +66,34 @@
    "y": 0.88,
    "size": 0.02,
    "rotate": 0
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.12,
+   "y": 0.12,
+   "size": 0.025
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.45,
+   "y": 0.2,
+   "size": 0.02
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.12,
+   "y": 0.86,
+   "size": 0.03
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.62,
+   "y": 0.87,
+   "size": 0.022
   }
  ]
 }

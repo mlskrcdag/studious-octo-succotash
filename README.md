@@ -24,7 +24,7 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
   - `script` — `text` (satırlar `\n`), `font` (`script`/`script2`/`script3`/`script4`), `offsets`, `rotate`, `color`
   - `label` — küçük ince yazı ("one", "6 am - 10 pm")
   - `clock` — `time: "08:22"`, `style: glass` (varsayılan: buzlu cam, şeffaf) `| solid`, `color`
-  - `star` — `style: white | yellow | polka`, `rotate`
+  - `star` — `style: white | yellow | polka | twinkle` (4 köşeli parıltı + ışıma), `rotate`
   - `pill` — konum/ay hapı, `icon: true/false`
   - `emoji` — tek emoji sticker: `text`, `size`, `rotate`
   - `title` — büyük pembe sans başlık (`text` satırları `\n`, `size`, `color`)

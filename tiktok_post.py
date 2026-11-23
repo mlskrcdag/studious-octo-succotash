@@ -343,6 +343,21 @@ def el_star(base, e, W, H):
     layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     pts = _star_points(cx, cy, r, rot)
+    if style == "twinkle":
+        # 4 köşeli parıltı yıldızı + yumuşak ışıma
+        pts = []
+        for i in range(8):
+            rr = r if i % 2 == 0 else r * 0.2
+            a = math.radians(rot + i * 45)
+            pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
+        glow = Image.new("RGBA", base.size, (0, 0, 0, 0))
+        gd = ImageDraw.Draw(glow)
+        gd.ellipse([cx - r * 0.45, cy - r * 0.45, cx + r * 0.45, cy + r * 0.45], fill=(255, 255, 255, 150))
+        glow = glow.filter(ImageFilter.GaussianBlur(r * 0.35))
+        base.alpha_composite(glow)
+        d.polygon(pts, fill=rgba(e.get("color", "white")))
+        base.alpha_composite(layer)
+        return
     if style == "yellow":
         d.polygon(_star_points(cx, cy, r, rot, 0.5), fill=rgba("star_yellow"))
         hl = _star_points(cx - r * 0.12, cy - r * 0.12, r * 0.45, rot, 0.5)

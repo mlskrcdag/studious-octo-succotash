@@ -22,7 +22,7 @@
  "elements": [
   {
    "type": "caption",
-   "text": "everything shower, mis gibi olundu 🫧🛁🧴✨ iyi geceler 🌙💤",
+   "text": "everything shower, mis gibi olundu, iyi geceler 🌙",
    "x": 0.38,
    "y": 0.2,
    "width": 0.5,
@@ -74,6 +74,34 @@
    "y": 0.06,
    "size": 0.02,
    "rotate": 0
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.12,
+   "y": 0.3,
+   "size": 0.025
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.75,
+   "y": 0.42,
+   "size": 0.02
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.62,
+   "y": 0.76,
+   "size": 0.03
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.88,
+   "y": 0.95,
+   "size": 0.022
   }
  ]
 }

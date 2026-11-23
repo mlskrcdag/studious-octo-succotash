@@ -22,7 +22,7 @@
  "elements": [
   {
    "type": "caption",
-   "text": "yoga 💖🧘🏻‍♀️✨🕉️",
+   "text": "yoga 💖",
    "x": 0.8,
    "y": 0.07,
    "width": 0.35,
@@ -43,7 +43,7 @@
   },
   {
    "type": "caption",
-   "text": "girls date midir peki 💅🏻☕️🍰🤎✨👯‍♀️",
+   "text": "girls date midir peki 💅🏻",
    "x": 0.77,
    "y": 0.63,
    "width": 0.42,
@@ -78,6 +78,34 @@
    "x": 0.92,
    "y": 0.45,
    "size": 0.024
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.35,
+   "y": 0.08,
+   "size": 0.025
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.55,
+   "y": 0.33,
+   "size": 0.02
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.15,
+   "y": 0.66,
+   "size": 0.03
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.55,
+   "y": 0.93,
+   "size": 0.022
   }
  ]
 }
