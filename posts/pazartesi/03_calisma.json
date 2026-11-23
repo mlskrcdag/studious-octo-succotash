@@ -1,0 +1,83 @@
+{
+ "layout": "stack2",
+ "photos": [
+  "photos/pzt_masa.jpg",
+  "photos/pzt_toro_yatak.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.6
+  ],
+  [
+   0.5,
+   0.62
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 5,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "caption",
+   "text": "hemen çalışmaya başlıyoruz, kuzum da yanımda 💻🐶🍊☕️🤍",
+   "x": 0.3,
+   "y": 0.22,
+   "width": 0.46,
+   "shadow": 200
+  },
+  {
+   "type": "clock",
+   "time": "08:30",
+   "x": 0.3,
+   "y": 0.33,
+   "size": 0.055
+  },
+  {
+   "type": "hand",
+   "text": "iş arkadaşım",
+   "x": 0.27,
+   "y": 0.6,
+   "size": 0.065,
+   "rotate": -8,
+   "color": "#3A3A3A",
+   "shadow": 0
+  },
+  {
+   "type": "doodle",
+   "shape": "arrow",
+   "x": 0.33,
+   "y": 0.68,
+   "size": 0.1,
+   "rotate": 30,
+   "color": "#3A3A3A",
+   "shadow": 0
+  },
+  {
+   "type": "emoji",
+   "text": "💻",
+   "x": 0.9,
+   "y": 0.44,
+   "size": 0.06,
+   "rotate": 10
+  },
+  {
+   "type": "emoji",
+   "text": "🍊",
+   "x": 0.1,
+   "y": 0.44,
+   "size": 0.055,
+   "rotate": -10
+  },
+  {
+   "type": "star",
+   "style": "yellow",
+   "x": 0.88,
+   "y": 0.6,
+   "size": 0.025,
+   "rotate": 0
+  }
+ ]
+}

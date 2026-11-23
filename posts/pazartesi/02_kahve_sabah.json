@@ -1,0 +1,80 @@
+{
+ "layout": "stack2",
+ "photos": [
+  "photos/pzt_inek_kahve.jpg",
+  "photos/pzt_sabah_ekibim.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.55
+  ],
+  [
+   0.5,
+   0.55
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 5,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "caption",
+   "text": "kahve ve benim sabah ekibim ☕️🐮🧴🌸✨",
+   "x": 0.74,
+   "y": 0.1,
+   "width": 0.44,
+   "shadow": 200,
+   "color": "white"
+  },
+  {
+   "type": "clock",
+   "time": "08:00",
+   "x": 0.8,
+   "y": 0.2,
+   "size": 0.055
+  },
+  {
+   "type": "hand",
+   "text": "benim sabah ekibim",
+   "x": 0.72,
+   "y": 0.6,
+   "size": 0.06,
+   "rotate": -6
+  },
+  {
+   "type": "doodle",
+   "shape": "underline",
+   "x": 0.72,
+   "y": 0.635,
+   "size": 0.3,
+   "rotate": -6
+  },
+  {
+   "type": "emoji",
+   "text": "🐮",
+   "x": 0.9,
+   "y": 0.42,
+   "size": 0.06,
+   "rotate": 12
+  },
+  {
+   "type": "emoji",
+   "text": "🫧",
+   "x": 0.1,
+   "y": 0.62,
+   "size": 0.06,
+   "rotate": -10
+  },
+  {
+   "type": "star",
+   "style": "white",
+   "x": 0.9,
+   "y": 0.88,
+   "size": 0.02,
+   "rotate": 0
+  }
+ ]
+}

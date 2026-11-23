@@ -1,0 +1,79 @@
+{
+ "layout": "stack2",
+ "photos": [
+  "photos/pzt_dus.jpg",
+  "photos/pzt_sac.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.6
+  ],
+  [
+   0.5,
+   0.45
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 5,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "caption",
+   "text": "everything shower, mis gibi olundu 🫧🛁🧴✨ iyi geceler 🌙💤",
+   "x": 0.38,
+   "y": 0.2,
+   "width": 0.5,
+   "shadow": 200
+  },
+  {
+   "type": "clock",
+   "time": "23:30",
+   "x": 0.38,
+   "y": 0.32,
+   "size": 0.055
+  },
+  {
+   "type": "hand",
+   "text": "iyi geceler",
+   "x": 0.25,
+   "y": 0.88,
+   "size": 0.07,
+   "rotate": -8
+  },
+  {
+   "type": "doodle",
+   "shape": "heart",
+   "x": 0.45,
+   "y": 0.87,
+   "size": 0.07,
+   "rotate": 10
+  },
+  {
+   "type": "emoji",
+   "text": "🌙",
+   "x": 0.88,
+   "y": 0.1,
+   "size": 0.065,
+   "rotate": 10
+  },
+  {
+   "type": "emoji",
+   "text": "🫧",
+   "x": 0.85,
+   "y": 0.6,
+   "size": 0.06,
+   "rotate": -10
+  },
+  {
+   "type": "star",
+   "style": "white",
+   "x": 0.08,
+   "y": 0.06,
+   "size": 0.02,
+   "rotate": 0
+  }
+ ]
+}
