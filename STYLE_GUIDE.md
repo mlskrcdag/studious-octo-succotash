@@ -53,3 +53,17 @@ Fotoğraflar canlı ama sıcak; vurgu renkleri: pembe, kobalt mavi, matcha yeşi
 
 ## 6. Renk düzenleme (grade) önerisi
 Hafif sıcak ve mat: parlaklık +3%, sıcaklık +5, siyahları biraz kaldır (fade 10–15), doygunluk aynı veya +5%. Telefonla: Pozlama +5, Sıcaklık +8, Siyah Nokta −10, Kontrast −5.
+
+## 7. Stil B — "office day" / el yazısı notlar (2. referans seti)
+Kullanıcının sonradan beğendiği iki referanstan çıkanlar; postlara karıştırılarak kullanılabilir.
+
+| Öğe | Görünüm | Araçtaki karşılığı |
+|---|---|---|
+| Büyük başlık | Pembe (`pop_pink` `#F7A1B9`), düz sans, küçük harf, dev boy, satırlar sıkışık ("day / in my / life"), iki fotoğrafın birleşim çizgisine ortalı | `title` (Inter, `line_height` 0.86) |
+| Üst/alt mini etiket | Beyaz küçük sans: "office day edition" üstte, "as an experience designer" altta | `label` + `font: "sans"`, `color: "white"`, `align: "center"` |
+| Sade saat | "8:45 am" — beyaz düz sans, iki fotoğrafın birleşim çizgisinde | `clock` + `style: "plain"` |
+| El yazısı notlar | Beyaz kalemle yazılmış gibi, hafif eğik: "double shot please!", "my morning fuel" | `hand` (Caveat; Türkçe karakter destekli), `rotate` |
+| Checklist | El yazısı başlık (":" ile biter) + titrek el çizimi kutucuklu maddeler | `hand` + `checklist: true`; "- " ile başlayan satır önceki maddenin devamı |
+| Doodle'lar | Elle çizilmiş meyve/ok/kalp illüstrasyonları | `doodle` (`arrow`, `heart`, `sparkle`, `underline`, `circle`, `swirl`); meyve vb. için `emoji` |
+
+Not: Referanstaki el yazısı daha "kalem çiziği" gibi; Türkçe karakterleri (ş, ğ, İ) eksiksiz destekleyen en yakın font Caveat olduğu için o seçildi.

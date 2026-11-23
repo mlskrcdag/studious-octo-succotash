@@ -27,5 +27,9 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
   - `star` — `style: white | yellow | polka`, `rotate`
   - `pill` — konum/ay hapı, `icon: true/false`
   - `emoji` — tek emoji sticker: `text`, `size`, `rotate`
+  - `title` — büyük pembe sans başlık (`text` satırları `\n`, `size`, `color`)
+  - `hand` — el yazısı not (`text`, `size`, `rotate`, `align`); `checklist: true` ile kutucuklu liste
+  - `doodle` — `shape: arrow | heart | sparkle | underline | circle | swirl`, `size`, `rotate`, `color`
+  - `clock` + `style: plain` — "8:45 am" gibi sade saat yazısı
 
 Fontlar `fonts/` içinde (Google Fonts, OFL lisansı; Inter de OFL).

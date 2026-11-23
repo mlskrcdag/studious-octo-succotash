@@ -29,6 +29,7 @@ PALETTE = {
     "clock_ink": "#4A4A4A",  # flip-clock rakamları (nötr)
     "clock_pink": "#EC6F9A", # flip-clock rakamları (pembe varyant)
     "star_yellow": "#FFD34E",
+    "pop_pink": "#F7A1B9",   # büyük sans başlık ("day in my life" office edition)
 }
 
 FONT_FILES = {
@@ -39,6 +40,7 @@ FONT_FILES = {
     "sans": "Inter-Regular.otf",            # caption yazısı (iOS/TikTok sistem fontu hissi)
     "sans_light": "Inter-Light.otf",
     "sans_medium": "Inter-Medium.otf",      # flip-clock rakamları
+    "hand": "Caveat.ttf",                   # el yazısı notlar / checklist (Türkçe karakter destekli)
 }
 
 _font_cache = {}
@@ -272,6 +274,17 @@ def el_label(base, e, W, H):
 def el_clock(base, e, W, H):
     """Flip-clock saat damgası. style='glass' (varsayılan): buzlu cam, şeffaf karolar,
     beyaz rakam. style='solid': açık gri dolu karolar."""
+    if e.get("style") == "plain":
+        # sade saat yazısı: "8:45 am" — beyaz, düz sans, hafif gölge
+        f = font("sans", e.get("size", 0.06) * W)
+        layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+        txt = e["time"]
+        tw = f.getlength(txt)
+        asc, desc = f.getmetrics()
+        ImageDraw.Draw(layer).text((e.get("x", 0.5) * W - tw / 2, e.get("y", 0.5) * H - (asc + desc) / 2),
+                                   txt, font=f, fill=rgba(e.get("color", "white")))
+        shadowed(base, layer, f.size * 0.15, e.get("shadow", 70))
+        return
     digits = e["time"].replace(":", "")
     tile_w = e.get("size", 0.065) * W
     tile_h = tile_w * 1.42
@@ -397,9 +410,122 @@ def el_emoji(base, e, W, H):
     shadowed(base, layer, em.width * 0.06, e.get("shadow", 50))
 
 
+def el_title(base, e, W, H):
+    """Büyük, düz sans başlık (küçük harf, sıkı satır aralığı) — 'day / in my / life'."""
+    f = font(e.get("font", "sans"), e.get("size", 0.17) * W)
+    lines = e["text"].split("\n")
+    lh = f.size * e.get("line_height", 0.86)
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    cx, cy = e.get("x", 0.5) * W, e.get("y", 0.5) * H
+    top = cy - lh * len(lines) / 2
+    for i, ln in enumerate(lines):
+        tw = f.getlength(ln)
+        d.text((cx - tw / 2, top + i * lh), ln, font=f, fill=rgba(e.get("color", "pop_pink")))
+    shadowed(base, layer, f.size * 0.04, e.get("shadow", 40))
+
+
+def _wobbly_box(d, x, y, s, fill, width):
+    """Elle çizilmiş gibi hafif titrek kare."""
+    import random
+    rnd = random.Random(int(x * 7 + y * 13))
+    j = lambda: rnd.uniform(-s * 0.06, s * 0.06)
+    pts = [(x + j(), y + j()), (x + s + j(), y + j()), (x + s + j(), y + s + j()), (x + j(), y + s + j())]
+    d.line(pts + [pts[0]], fill=fill, width=width, joint="curve")
+
+
+def el_hand(base, e, W, H):
+    """El yazısı not (beyaz kalem hissi): 'double shot please!', 'my morning fuel'.
+    checklist: true ise ':' ile biten satıra kadar başlık, sonrakiler kutucuklu madde olur.
+    '- ' ile başlayan satır bir önceki maddenin devamı (girintili)."""
+    f = font("hand", e.get("size", 0.05) * W)
+    ink = rgba(e.get("color", "white"))
+    lines = e["text"].split("\n")
+    lh = f.size * e.get("line_height", 1.0)
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    x0, y0 = e.get("x", 0.5) * W, e.get("y", 0.5) * H
+    align = e.get("align", "left" if e.get("checklist") else "center")
+    box = f.size * 0.5
+    gap = f.size * 0.35
+    # başlık satırları: ':' ile biten ilk satıra kadar (yoksa sadece ilk satır)
+    n_head = next((k + 1 for k, l in enumerate(lines) if l.rstrip().endswith(":")), 1)
+    total_h = lh * len(lines) + (lh * 0.3 if e.get("checklist") else 0)
+    y = y0 - total_h / 2
+    for i, ln in enumerate(lines):
+        x = x0
+        item = e.get("checklist") and i >= n_head
+        if item and ln.startswith("- "):
+            ln = ln[2:]
+            x += box + gap
+        elif item:
+            asc, _ = f.getmetrics()
+            by = y + asc - box * 1.05
+            _wobbly_box(d, x, by, box, ink, max(2, int(f.size * 0.06)))
+            x += box + gap
+        tw = text_width(ln, f)
+        if align == "center":
+            x -= tw / 2
+        draw_line(layer, (x, y), ln, f, ink)
+        y += lh
+        if e.get("checklist") and i == n_head - 1:
+            y += lh * 0.3
+    if e.get("rotate"):
+        layer = layer.rotate(e["rotate"], resample=Image.BICUBIC, center=(x0, y0))
+    shadowed(base, layer, f.size * 0.12, e.get("shadow", 90))
+
+
+def el_doodle(base, e, W, H):
+    """Elle çizilmiş doodle'lar: arrow | heart | sparkle | underline | circle | swirl."""
+    kind = e.get("shape", "arrow")
+    s = e.get("size", 0.08) * W
+    cx, cy = e.get("x", 0.5) * W, e.get("y", 0.5) * H
+    ink = rgba(e.get("color", "white"))
+    lw = max(2, int(e.get("width", 0.004) * W))
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    def curve(pts, n=40):
+        # Catmull-Rom yumuşatma
+        out = []
+        P = [pts[0]] + pts + [pts[-1]]
+        for k in range(1, len(P) - 2):
+            p0, p1, p2, p3 = P[k - 1], P[k], P[k + 1], P[k + 2]
+            for t in [i / n for i in range(n)]:
+                t2, t3 = t * t, t * t * t
+                out.append(tuple(0.5 * ((2 * p1[c]) + (-p0[c] + p2[c]) * t + (2 * p0[c] - 5 * p1[c] + 4 * p2[c] - p3[c]) * t2
+                                        + (-p0[c] + 3 * p1[c] - 3 * p2[c] + p3[c]) * t3) for c in (0, 1)))
+        out.append(pts[-1])
+        return out
+    P = lambda u, v: (cx + u * s, cy + v * s)
+    if kind == "arrow":
+        line = curve([P(-0.5, 0.1), P(-0.15, -0.12), P(0.2, -0.05), P(0.5, 0.0)])
+        d.line(line, fill=ink, width=lw, joint="curve")
+        d.line([P(0.32, -0.15), P(0.5, 0.0), P(0.3, 0.13)], fill=ink, width=lw, joint="curve")
+    elif kind == "heart":
+        d.line(curve([P(0, 0.45), P(-0.4, 0.05), P(-0.38, -0.3), P(-0.1, -0.35), P(0, -0.12),
+                      P(0.1, -0.35), P(0.38, -0.3), P(0.4, 0.05), P(0.02, 0.43)]), fill=ink, width=lw, joint="curve")
+    elif kind == "sparkle":
+        for a, r in [(0, 0.5), (90, 0.5), (45, 0.25), (135, 0.25)]:
+            t = math.radians(a)
+            d.line([P(-math.cos(t) * r, -math.sin(t) * r), P(math.cos(t) * r, math.sin(t) * r)], fill=ink, width=lw)
+    elif kind == "underline":
+        d.line(curve([P(-0.5, 0), P(-0.2, 0.04), P(0.15, -0.02), P(0.5, 0.03)]), fill=ink, width=lw, joint="curve")
+    elif kind == "circle":
+        pts = [P(0.5 * math.cos(math.radians(a)) * (1 + 0.04 * math.sin(a)), 0.32 * math.sin(math.radians(a)))
+               for a in range(-20, 370, 30)]
+        d.line(curve(pts), fill=ink, width=lw, joint="curve")
+    elif kind == "swirl":
+        pts = [P(0.08 * k / 6 * math.cos(k * 0.9) * 3, 0.08 * k / 6 * math.sin(k * 0.9) * 3) for k in range(1, 16)]
+        d.line(curve(pts), fill=ink, width=lw, joint="curve")
+    if e.get("rotate"):
+        layer = layer.rotate(e["rotate"], resample=Image.BICUBIC, center=(cx, cy))
+    shadowed(base, layer, lw * 1.5, e.get("shadow", 90))
+
+
 ELEMENTS = {
     "caption": el_caption, "script": el_script, "label": el_label,
     "clock": el_clock, "star": el_star, "pill": el_pill, "emoji": el_emoji,
+    "title": el_title, "hand": el_hand, "doodle": el_doodle,
 }
 
 

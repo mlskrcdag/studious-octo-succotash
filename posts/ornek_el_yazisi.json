@@ -1,0 +1,13 @@
+{
+ "layout": "stack2",
+ "photos": ["photos/nespresso.jpg", "photos/kahvalti.jpg"],
+ "focus": [[0.6, 0.62], [0.5, 0.5]],
+ "grade": {"brightness": 1.03, "warmth": 5, "fade": 10},
+ "elements": [
+  {"type": "hand", "text": "double shot\nlütfen!", "x": 0.22, "y": 0.3, "size": 0.055, "rotate": 12},
+  {"type": "hand", "text": "sabah yakıtım", "x": 0.78, "y": 0.13, "size": 0.055, "rotate": 8, "color": "#3A3A3A", "shadow": 0},
+  {"type": "doodle", "shape": "arrow", "x": 0.33, "y": 0.4, "size": 0.12, "rotate": 25},
+  {"type": "clock", "style": "plain", "time": "12:00 pm", "x": 0.5, "y": 0.5},
+  {"type": "hand", "checklist": true, "text": "sabah checklist'imden\nsonra ödülüm:\ninbox'ı kontrol et\nmesajlara dön\n- ve maillere\nbugünün to-do listesi", "x": 0.62, "y": 0.8, "size": 0.045, "shadow": 200}
+ ]
+}

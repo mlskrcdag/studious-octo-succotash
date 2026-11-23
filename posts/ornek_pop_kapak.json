@@ -1,0 +1,13 @@
+{
+ "layout": "stack2",
+ "photos": ["photos/ayna.jpg", "photos/kahvalti.jpg"],
+ "focus": [[0.5, 0.45], [0.5, 0.45]],
+ "grade": {"brightness": 1.03, "warmth": 5, "fade": 10},
+ "elements": [
+  {"type": "label", "text": "sunday edition", "x": 0.5, "y": 0.3, "size": 0.03, "color": "white", "align": "center", "font": "sans"},
+  {"type": "title", "text": "benimle\nbir\ngün", "x": 0.55, "y": 0.5, "size": 0.18},
+  {"type": "label", "text": "as a content creator", "x": 0.5, "y": 0.67, "size": 0.03, "color": "white", "align": "center", "font": "sans"},
+  {"type": "doodle", "shape": "heart", "x": 0.2, "y": 0.62, "size": 0.1, "rotate": -10},
+  {"type": "doodle", "shape": "sparkle", "x": 0.86, "y": 0.3, "size": 0.07}
+ ]
+}
