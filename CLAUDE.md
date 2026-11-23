@@ -4,6 +4,6 @@ Bu repo kullanıcının TikTok foto-postlarını üretmek için. Kullanıcı Tü
 
 İş akışı: kullanıcı fotoğraf gönderdiğinde onları `photos/` altına kopyala, STYLE_GUIDE.md'deki kurallara göre `posts/<ad>.json` yaz, `python3 tiktok_post.py posts/<ad>.json` çalıştır, çıktıyı küçültüp kendin kontrol et (yazı yüze/ürüne denk geliyor mu, okunuyor mu), sonra `output/` dosyasını kullanıcıya gönder.
 
-Yerleşim ipuçları: kullanıcı yazıların bol emojili ve kenara değil göz hizasına (karenin üst üçte biri–ortası) yakın olmasını seviyor; caption ve saati fotoğrafın boş/sade alanına koy; yüzleri ve logo/ürünleri kapatma; açık zeminlerde gölgeyi (`shadow`) artır.
+Yerleşim ipuçları: el yazısı notları (`hand`) eğik değil düz yaz (rotate 0). Kullanıcı yazıların bol emojili ve kenara değil göz hizasına (karenin üst üçte biri–ortası) yakın olmasını seviyor; caption ve saati fotoğrafın boş/sade alanına koy; yüzleri ve logo/ürünleri kapatma; açık zeminlerde gölgeyi (`shadow`) artır.
 
 İki stil var (STYLE_GUIDE.md): A = script başlık + şeffaf flip-saat; B = pembe sans başlık, el yazısı notlar, checklist, sade saat, doodle. Kullanıcı B öğelerini postlarına eklemeyi istedi; uygun slaytlarda ikisini karıştırabilirsin.

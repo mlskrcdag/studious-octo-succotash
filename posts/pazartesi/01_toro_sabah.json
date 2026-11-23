@@ -22,7 +22,7 @@
  "elements": [
   {
    "type": "caption",
-   "text": "sabah uyanma ekibi & toro'nun sabah ekibi 🐶🌅🍂🐾✨",
+   "text": "sabah uyanma ekibi 🐶🌅🍂🐾✨",
    "x": 0.5,
    "y": 0.1,
    "width": 0.62,
@@ -41,7 +41,7 @@
    "x": 0.76,
    "y": 0.4,
    "size": 0.06,
-   "rotate": -6,
+   "rotate": 0,
    "color": "white",
    "shadow": 200
   },

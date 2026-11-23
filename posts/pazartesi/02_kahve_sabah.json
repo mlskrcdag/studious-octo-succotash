@@ -21,19 +21,10 @@
  },
  "elements": [
   {
-   "type": "caption",
-   "text": "kahve ve benim sabah ekibim ☕️🐮🧴🌸✨",
-   "x": 0.74,
-   "y": 0.1,
-   "width": 0.44,
-   "shadow": 200,
-   "color": "white"
-  },
-  {
    "type": "clock",
    "time": "08:00",
    "x": 0.8,
-   "y": 0.2,
+   "y": 0.15,
    "size": 0.055
   },
   {
@@ -42,7 +33,7 @@
    "x": 0.72,
    "y": 0.6,
    "size": 0.06,
-   "rotate": -6
+   "rotate": 0
   },
   {
    "type": "doodle",
@@ -50,7 +41,7 @@
    "x": 0.72,
    "y": 0.635,
    "size": 0.3,
-   "rotate": -6
+   "rotate": 0
   },
   {
    "type": "emoji",
