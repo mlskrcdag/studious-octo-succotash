@@ -6,6 +6,6 @@ Bu repo kullanıcının TikTok foto-postlarını üretmek için. Kullanıcı Tü
 
 Emoji: caption sonunda en fazla 1 emoji (kullanıcı yazı yanındaki emojileri azaltmak istedi); süs olarak fotoğrafın içine `star` + `style: twinkle` parıltılar (3–4 adet, logo/yüz üstüne değil). Yerleşim ipuçları: el yazısı notları (`hand`) eğik değil düz yaz (rotate 0). Kullanıcı yazıların bol emojili ve kenara değil göz hizasına (karenin üst üçte biri–ortası) yakın olmasını seviyor; caption ve saati fotoğrafın boş/sade alanına koy; yüzleri ve logo/ürünleri kapatma; açık zeminlerde gölgeyi (`shadow`) artır.
 
-İki stil var (STYLE_GUIDE.md): A = script başlık + şeffaf flip-saat; B = pembe sans başlık, el yazısı notlar, checklist, sade saat, doodle. Kullanıcı B öğelerini postlarına eklemeyi istedi; uygun slaytlarda ikisini karıştırabilirsin.
+Üç stil var (STYLE_GUIDE.md): A = script başlık + şeffaf flip-saat; B = pembe sans başlık, el yazısı notlar, checklist, sade saat, doodle; C = beyaz kalın başlık, pembe [etiket], arama çubuğu, photo dump klasörü, beyaz yıldızlar. Kullanıcı B öğelerini postlarına eklemeyi istedi; uygun slaytlarda ikisini karıştırabilirsin.
 
 Düzen: varsayılan tek tam fotoğraf; ikinci foto için polaroid `insets`; `stack2` yalnızca birbirine uyan ikililer için (kullanıcı her şeyi alt alta koymayı sevmedi).

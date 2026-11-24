@@ -29,7 +29,9 @@ PALETTE = {
     "clock_ink": "#4A4A4A",  # flip-clock rakamları (nötr)
     "clock_pink": "#EC6F9A", # flip-clock rakamları (pembe varyant)
     "star_yellow": "#FFD34E",
-    "pop_pink": "#F7A1B9",   # büyük sans başlık ("day in my life" office edition)
+    "pop_pink": "#F7A1B9",
+    "tag_bg": "#F9CFDD",     # stil C: pembe vurgu etiketi zemini
+    "berry": "#A3344F",      # stil C: etiket yazısı / arama butonu   # büyük sans başlık ("day in my life" office edition)
 }
 
 FONT_FILES = {
@@ -40,6 +42,7 @@ FONT_FILES = {
     "sans": "Inter-Regular.otf",            # caption yazısı (iOS/TikTok sistem fontu hissi)
     "sans_light": "Inter-Light.otf",
     "sans_medium": "Inter-Medium.otf",      # flip-clock rakamları
+    "sans_bold": "Inter-SemiBold.otf",      # stil C: beyaz kalın başlık
     "hand": "Caveat.ttf",                   # el yazısı notlar / checklist (Türkçe karakter destekli)
 }
 
@@ -537,10 +540,83 @@ def el_doodle(base, e, W, H):
     shadowed(base, layer, lw * 1.5, e.get("shadow", 90))
 
 
+def el_tag(base, e, W, H):
+    """Pembe vurgu etiketi: '[ as a student ]' — açık pembe dikdörtgen, koyu pembe yazı."""
+    f = font(e.get("font", "sans"), e.get("size", 0.04) * W)
+    txt = e["text"]
+    if e.get("brackets", True):
+        txt = "[ " + txt + " ]"
+    tw = text_width(txt, f)
+    asc, desc = f.getmetrics()
+    px, py = f.size * 0.25, f.size * 0.08
+    w, h = tw + px * 2, asc + desc + py * 2
+    layer = Image.new("RGBA", (int(w) + 4, int(h) + 4), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    d.rectangle([0, 0, w, h], fill=rgba(e.get("bg", "tag_bg"), 235))
+    draw_line(layer, (px, py), txt, f, rgba(e.get("color", "berry")))
+    if e.get("rotate"):
+        layer = layer.rotate(e["rotate"], resample=Image.BICUBIC, expand=True)
+    base.alpha_composite(layer, (int(e.get("x", 0.5) * W - layer.width / 2), int(e.get("y", 0.5) * H - layer.height / 2)))
+
+
+def el_search(base, e, W, H):
+    """Arama çubuğu: beyaz yuvarlak kutu, pembe vurgulu metin + imleçler, sağda yuvarlak ok butonu."""
+    f = font("sans", e.get("size", 0.034) * W)
+    w = e.get("width", 0.66) * W
+    h = f.size * 2.3
+    x0 = e.get("x", 0.5) * W - w / 2
+    y0 = e.get("y", 0.8) * H - h / 2
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    d.rounded_rectangle([x0 - h * 0.12, y0 - h * 0.12, x0 + w + h * 0.12, y0 + h * 1.12], radius=h * 0.62, fill=(255, 255, 255, 120))
+    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=(255, 255, 255, 245),
+                        outline=(225, 225, 225, 255), width=max(1, int(h * 0.02)))
+    berry = rgba("berry")
+    tx = x0 + h * 0.55
+    tw = text_width(e["text"], f)
+    asc, desc = f.getmetrics()
+    ty = y0 + (h - asc - desc) / 2
+    d.rectangle([tx, ty, tx + tw, ty + asc + desc], fill=rgba("tag_bg", 200))
+    draw_line(layer, (tx, ty), e["text"], f, (60, 60, 60, 255))
+    lw = max(2, int(f.size * 0.07))
+    for cx_, top in ((tx - lw, True), (tx + tw + lw, False)):
+        d.line([cx_, ty - f.size * 0.05, cx_, ty + asc + desc + f.size * 0.05], fill=berry, width=lw)
+        r = f.size * 0.12
+        cy_ = ty - f.size * 0.05 if top else ty + asc + desc + f.size * 0.05
+        d.ellipse([cx_ - r, cy_ - r, cx_ + r, cy_ + r], fill=berry)
+    br = h * 0.32
+    bx, by = x0 + w - h * 0.55, y0 + h / 2
+    d.ellipse([bx - br, by - br, bx + br, by + br], fill=berry)
+    aw = max(2, int(br * 0.18))
+    d.line([bx, by + br * 0.5, bx, by - br * 0.5], fill=(255, 255, 255, 255), width=aw)
+    d.line([bx - br * 0.4, by - br * 0.1, bx, by - br * 0.5, bx + br * 0.4, by - br * 0.1], fill=(255, 255, 255, 255), width=aw, joint="curve")
+    shadowed(base, layer, h * 0.15, e.get("shadow", 40))
+
+
+def el_folder(base, e, W, H):
+    """Pembe masaüstü klasör ikonu + altında etiket ('photo dump')."""
+    s = e.get("size", 0.16) * W
+    cx, cy = e.get("x", 0.2) * W, e.get("y", 0.15) * H
+    x0, y0 = cx - s / 2, cy - s * 0.4
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    back, front = rgba("#F4A9C4"), rgba("#F9C3D7")
+    r = s * 0.06
+    d.rounded_rectangle([x0, y0, x0 + s * 0.42, y0 + s * 0.2], radius=r, fill=back)
+    d.rounded_rectangle([x0, y0 + s * 0.08, x0 + s, y0 + s * 0.72], radius=r, fill=back)
+    d.rounded_rectangle([x0, y0 + s * 0.18, x0 + s, y0 + s * 0.8], radius=r, fill=front)
+    if e.get("text"):
+        f = font("sans_medium", s * 0.17)
+        tw = text_width(e["text"], f)
+        draw_line(layer, (cx - tw / 2, y0 + s * 0.88), e["text"], f, rgba("white"))
+    shadowed(base, layer, s * 0.05, e.get("shadow", 80))
+
+
 ELEMENTS = {
     "caption": el_caption, "script": el_script, "label": el_label,
     "clock": el_clock, "star": el_star, "pill": el_pill, "emoji": el_emoji,
     "title": el_title, "hand": el_hand, "doodle": el_doodle,
+    "tag": el_tag, "search": el_search, "folder": el_folder,
 }
 
 

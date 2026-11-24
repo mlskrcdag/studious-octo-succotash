@@ -28,7 +28,8 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
   - `pill` — konum/ay hapı, `icon: true/false`
 - `insets`: ana fotoğrafın üstüne polaroid kart(lar) — `photo, x, y, w, aspect, rotate, crop [l,t,r,b], focus, frame (polaroid | rounded | plain)`
   - `emoji` — tek emoji sticker: `text`, `size`, `rotate`
-  - `title` — büyük pembe sans başlık (`text` satırları `\n`, `size`, `color`)
+  - `tag` — pembe vurgu etiketi "[ ... ]"; `search` — arama çubuğu; `folder` — pembe klasör ikonu + etiket
+  - `title` — büyük pembe sans başlık (`font: sans_bold`, `color: white` ile stil C) (`text` satırları `\n`, `size`, `color`)
   - `hand` — el yazısı not (`text`, `size`, `rotate`, `align`); `checklist: true` ile kutucuklu liste
   - `doodle` — `shape: arrow | heart | sparkle | underline | circle | swirl`, `size`, `rotate`, `color`
   - `clock` + `style: plain` — "8:45 am" gibi sade saat yazısı

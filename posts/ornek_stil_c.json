@@ -1,0 +1,20 @@
+{
+ "layout": "stack2",
+ "photos": ["photos/pzt_latte.jpg", "photos/pzt_masa.jpg"],
+ "focus": [[0.5, 0.5], [0.5, 0.6]],
+ "grade": {"brightness": 1.03, "warmth": 5, "fade": 10},
+ "elements": [
+  {"type": "folder", "text": "photo dump", "x": 0.18, "y": 0.13, "size": 0.16},
+  {"type": "title", "text": "benimle\nbir gün", "font": "sans_bold", "color": "white", "x": 0.52, "y": 0.5, "size": 0.2, "line_height": 0.92, "shadow": 70},
+  {"type": "tag", "text": "evden çalışırken", "x": 0.26, "y": 0.43, "size": 0.038, "rotate": -3},
+  {"type": "tag", "text": "& toro'yla", "x": 0.7, "y": 0.62, "size": 0.038, "rotate": 3},
+  {"type": "search", "text": "pazartesi rutinim", "x": 0.5, "y": 0.8},
+  {"type": "star", "style": "white", "x": 0.68, "y": 0.16, "size": 0.022},
+  {"type": "star", "style": "white", "x": 0.87, "y": 0.23, "size": 0.02},
+  {"type": "star", "style": "white", "x": 0.12, "y": 0.35, "size": 0.02},
+  {"type": "star", "style": "white", "x": 0.93, "y": 0.49, "size": 0.02},
+  {"type": "star", "style": "white", "x": 0.18, "y": 0.71, "size": 0.02},
+  {"type": "star", "style": "white", "x": 0.9, "y": 0.74, "size": 0.02},
+  {"type": "star", "style": "white", "x": 0.22, "y": 0.92, "size": 0.02}
+ ]
+}

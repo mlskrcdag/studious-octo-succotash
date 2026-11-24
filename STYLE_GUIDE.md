@@ -73,3 +73,12 @@ Kullanıcı her slaytı alt alta bölmeyi sevmedi; "daha fotoğrafik" istiyor:
 - Varsayılan: tek fotoğraf tam ekran (`layout: full`).
 - İkinci fotoğraf gerekiyorsa üstüne eğik **polaroid kart** (`insets`: `x, y, w, aspect, rotate, crop, frame: polaroid | rounded | plain`).
 - Alt alta (`stack2`) sadece renk/konu uyumu olan ikili için (ör. kırmızı kazak + Toro'nun kırmızı kazağı).
+
+## 9. Stil C — "photo dump / a day in my life" (3. referans)
+| Öğe | Görünüm | Araçtaki karşılığı |
+|---|---|---|
+| Dev beyaz başlık | Kalın beyaz sans, iki fotoğrafın birleşim çizgisine binen | `title` + `font: "sans_bold"`, `color: "white"` |
+| Vurgu etiketleri | Açık pembe dikdörtgen, koyu pembe yazı, köşeli parantez: "[ as a student ]", başlığa çapraz yerleşir | `tag` (`text`, `rotate`, `brackets: false` ile parantezsiz) |
+| Arama çubuğu | Beyaz yuvarlak kutu, pembe vurgulu seçili metin + imleçler, sağda bordo ok butonu: "My everyday routine" | `search` (`text`, `width`) |
+| Klasör ikonu | Pembe masaüstü klasörü, altında "photo dump" | `folder` (`text`, `size`) |
+| Yıldızlar | Çok sayıda küçük beyaz 5 köşeli yıldız, dağınık | `star` + `style: "white"` |
