@@ -9,3 +9,5 @@ Emoji: caption sonunda en fazla 1 emoji (kullanıcı yazı yanındaki emojileri 
 Üç stil var (STYLE_GUIDE.md): A = script başlık + şeffaf flip-saat; B = pembe sans başlık, el yazısı notlar, checklist, sade saat, doodle; C = beyaz kalın başlık, pembe [etiket], arama çubuğu, photo dump klasörü, beyaz yıldızlar. Kullanıcı B öğelerini postlarına eklemeyi istedi; uygun slaytlarda ikisini karıştırabilirsin.
 
 Düzen: varsayılan tek tam fotoğraf; ikinci foto için polaroid `insets`; `stack2` yalnızca birbirine uyan ikililer için (kullanıcı her şeyi alt alta koymayı sevmedi).
+
+Süs: kullanıcı renkli süs istiyor — slayt başına 2–3 `button` (pastel düğme) + büyük `polka` yıldız, 1–2 twinkle.

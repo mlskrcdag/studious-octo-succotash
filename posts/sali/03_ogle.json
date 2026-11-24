@@ -46,24 +46,36 @@
    "size": 0.02
   },
   {
-   "type": "star",
-   "style": "twinkle",
-   "x": 0.85,
-   "y": 0.92,
-   "size": 0.03
-  },
-  {
-   "type": "star",
-   "style": "twinkle",
-   "x": 0.08,
-   "y": 0.5,
-   "size": 0.022
-  },
-  {
    "type": "pill",
    "text": "Vega Center HMBRGR",
    "x": 0.74,
    "y": 0.06
+  },
+  {
+   "type": "button",
+   "shape": "round",
+   "color": "button_blue",
+   "x": 0.08,
+   "y": 0.56,
+   "size": 0.176,
+   "tilt": 0
+  },
+  {
+   "type": "star",
+   "style": "polka",
+   "x": 0.92,
+   "y": 0.62,
+   "size": 0.09,
+   "rotate": 10
+  },
+  {
+   "type": "button",
+   "shape": "star",
+   "color": "button_yellow",
+   "x": 0.45,
+   "y": 0.93,
+   "size": 0.16,
+   "tilt": -6
   }
  ],
  "insets": [

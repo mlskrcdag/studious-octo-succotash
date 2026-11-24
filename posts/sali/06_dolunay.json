@@ -46,18 +46,31 @@
    "size": 0.02
   },
   {
-   "type": "star",
-   "style": "twinkle",
-   "x": 0.85,
-   "y": 0.12,
-   "size": 0.03
+   "type": "button",
+   "shape": "star",
+   "color": "button_lilac",
+   "x": 0.14,
+   "y": 0.3,
+   "size": 0.192,
+   "tilt": -8
   },
   {
-   "type": "star",
-   "style": "twinkle",
-   "x": 0.2,
-   "y": 0.92,
-   "size": 0.022
+   "type": "button",
+   "shape": "round",
+   "color": "button_pink",
+   "x": 0.86,
+   "y": 0.9,
+   "size": 0.176,
+   "tilt": 0
+  },
+  {
+   "type": "button",
+   "shape": "star",
+   "color": "button_yellow",
+   "x": 0.58,
+   "y": 0.93,
+   "size": 0.144,
+   "tilt": 12
   }
  ]
 }

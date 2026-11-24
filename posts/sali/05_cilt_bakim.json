@@ -47,26 +47,38 @@
    "size": 0.02
   },
   {
-   "type": "star",
-   "style": "twinkle",
-   "x": 0.6,
-   "y": 0.6,
-   "size": 0.03
-  },
-  {
-   "type": "star",
-   "style": "twinkle",
-   "x": 0.95,
-   "y": 0.95,
-   "size": 0.022
-  },
-  {
    "type": "doodle",
    "shape": "arrow",
    "x": 0.42,
    "y": 0.31,
    "size": 0.12,
    "rotate": 20
+  },
+  {
+   "type": "button",
+   "shape": "round",
+   "color": "button_pink",
+   "x": 0.56,
+   "y": 0.47,
+   "size": 0.16,
+   "tilt": 0
+  },
+  {
+   "type": "star",
+   "style": "polka",
+   "x": 0.1,
+   "y": 0.95,
+   "size": 0.09,
+   "rotate": -8
+  },
+  {
+   "type": "button",
+   "shape": "star",
+   "color": "button_lilac",
+   "x": 0.9,
+   "y": 0.95,
+   "size": 0.16,
+   "tilt": 10
   }
  ],
  "insets": [

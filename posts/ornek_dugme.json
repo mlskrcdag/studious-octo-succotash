@@ -1,0 +1,8 @@
+{"layout":"full","photos":["photos/sali_asansor.jpg"],"focus":[[0.5,0.5]],
+ "elements":[
+  {"type":"button","shape":"round","color":"button_pink","x":0.2,"y":0.3,"size":0.18},
+  {"type":"button","shape":"star","color":"button_yellow","x":0.8,"y":0.3,"size":0.17,"tilt":-12},
+  {"type":"button","shape":"round","color":"button_blue","x":0.2,"y":0.7,"size":0.13},
+  {"type":"button","shape":"star","color":"button_lilac","x":0.8,"y":0.7,"size":0.14,"tilt":10},
+  {"type":"star","style":"polka","x":0.5,"y":0.9,"size":0.1}
+ ]}
