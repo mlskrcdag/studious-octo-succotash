@@ -1,17 +1,12 @@
 {
- "layout": "stack2",
+ "layout": "full",
  "photos": [
-  "photos/sali_gece_bakim.jpg",
-  "photos/sali_serum.jpg"
+  "photos/sali_gece_bakim.jpg"
  ],
  "focus": [
   [
    0.5,
-   0.55
-  ],
-  [
-   0.5,
-   0.45
+   0.5
   ]
  ],
  "grade": {
@@ -23,46 +18,60 @@
   {
    "type": "caption",
    "text": "eve gelince cilt bakımı yaptım 🫧",
-   "x": 0.62,
-   "y": 0.08,
+   "x": 0.5,
+   "y": 0.82,
    "width": 0.6,
    "shadow": 200
   },
   {
    "type": "hand",
    "text": "bu ürünü çok seviyorum,\nbana ritüel hissettiriyor",
-   "x": 0.62,
-   "y": 0.88,
+   "x": 0.5,
+   "y": 0.91,
    "size": 0.055,
    "rotate": 0
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.75,
-   "y": 0.22,
+   "x": 0.5,
+   "y": 0.25,
    "size": 0.025
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.92,
-   "y": 0.45,
+   "x": 0.15,
+   "y": 0.12,
    "size": 0.02
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.12,
+   "x": 0.6,
    "y": 0.6,
    "size": 0.03
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.88,
-   "y": 0.7,
+   "x": 0.95,
+   "y": 0.95,
    "size": 0.022
+  }
+ ],
+ "insets": [
+  {
+   "photo": "photos/sali_serum.jpg",
+   "x": 0.73,
+   "y": 0.24,
+   "w": 0.4,
+   "aspect": 1.2,
+   "rotate": 5,
+   "focus": [
+    0.45,
+    0.45
+   ]
   }
  ]
 }

@@ -26,6 +26,7 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
   - `clock` — `time: "08:22"`, `style: glass` (varsayılan: buzlu cam, şeffaf) `| solid`, `color`
   - `star` — `style: white | yellow | polka | twinkle` (4 köşeli parıltı + ışıma), `rotate`
   - `pill` — konum/ay hapı, `icon: true/false`
+- `insets`: ana fotoğrafın üstüne polaroid kart(lar) — `photo, x, y, w, aspect, rotate, crop [l,t,r,b], focus, frame (polaroid | rounded | plain)`
   - `emoji` — tek emoji sticker: `text`, `size`, `rotate`
   - `title` — büyük pembe sans başlık (`text` satırları `\n`, `size`, `color`)
   - `hand` — el yazısı not (`text`, `size`, `rotate`, `align`); `checklist: true` ile kutucuklu liste

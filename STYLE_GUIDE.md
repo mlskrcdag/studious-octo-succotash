@@ -67,3 +67,9 @@ Kullanıcının sonradan beğendiği iki referanstan çıkanlar; postlara karı�
 | Doodle'lar | Elle çizilmiş meyve/ok/kalp illüstrasyonları | `doodle` (`arrow`, `heart`, `sparkle`, `underline`, `circle`, `swirl`); meyve vb. için `emoji` |
 
 Not: Referanstaki el yazısı daha "kalem çiziği" gibi; Türkçe karakterleri (ş, ğ, İ) eksiksiz destekleyen en yakın font Caveat olduğu için o seçildi.
+
+## 8. Fotoğrafik düzen (kullanıcı tercihi)
+Kullanıcı her slaytı alt alta bölmeyi sevmedi; "daha fotoğrafik" istiyor:
+- Varsayılan: tek fotoğraf tam ekran (`layout: full`).
+- İkinci fotoğraf gerekiyorsa üstüne eğik **polaroid kart** (`insets`: `x, y, w, aspect, rotate, crop, frame: polaroid | rounded | plain`).
+- Alt alta (`stack2`) sadece renk/konu uyumu olan ikili için (ör. kırmızı kazak + Toro'nun kırmızı kazağı).

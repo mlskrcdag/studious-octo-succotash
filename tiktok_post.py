@@ -564,11 +564,56 @@ def grade(img, g):
     return rgb.convert("RGBA")
 
 
+def add_insets(base, spec):
+    """Ana fotoğrafın üstüne küçük 'polaroid' kart(lar): spec["insets"] listesi.
+    Her kart: photo, x, y (merkez, 0–1), w (genişlik oranı), aspect (y/g, ör. 1.0 kare, 1.25 dikey),
+    crop [sol, üst, sağ, alt] (0–1, isteğe bağlı), focus, rotate, frame: polaroid | plain | rounded."""
+    W, H = base.size
+    for c in spec.get("insets", []):
+        img = load(c["photo"])
+        if c.get("crop"):
+            l, t, r, b = c["crop"]
+            img = img.crop((int(l * img.width), int(t * img.height), int(r * img.width), int(b * img.height)))
+        if c.get("grade", spec.get("grade")):
+            img = grade(img.convert("RGBA"), c.get("grade", spec.get("grade"))).convert("RGB")
+        w = int(c.get("w", 0.42) * W)
+        h = int(w * c.get("aspect", 1.25))
+        photo = fit(img, w, h, tuple(c.get("focus", [0.5, 0.5])))
+        frame = c.get("frame", "polaroid")
+        if frame == "polaroid":
+            pad = int(w * 0.05)
+            card = Image.new("RGBA", (w + pad * 2, h + pad * 2 + int(w * 0.14)), (250, 248, 243, 255))
+            card.paste(photo, (pad, pad))
+        elif frame == "rounded":
+            card = photo.convert("RGBA")
+            m = Image.new("L", card.size, 0)
+            ImageDraw.Draw(m).rounded_rectangle([0, 0, w, h], radius=int(w * 0.06), fill=255)
+            card.putalpha(m)
+        else:
+            pad = int(w * 0.02)
+            card = Image.new("RGBA", (w + pad * 2, h + pad * 2), (255, 255, 255, 255))
+            card.paste(photo, (pad, pad))
+        if c.get("rotate"):
+            card = card.rotate(c["rotate"], resample=Image.BICUBIC, expand=True)
+        cx, cy = c.get("x", 0.7) * W, c.get("y", 0.3) * H
+        pos = (int(cx - card.width / 2), int(cy - card.height / 2))
+        # yumuşak gölge
+        sh = Image.new("RGBA", base.size, (0, 0, 0, 0))
+        a = Image.new("L", base.size, 0)
+        a.paste(card.getchannel("A"), (pos[0] + int(w * 0.015), pos[1] + int(w * 0.03)))
+        a = a.filter(ImageFilter.GaussianBlur(w * 0.03)).point(lambda v: int(v * 0.45))
+        sh.putalpha(a)
+        base.alpha_composite(sh)
+        base.alpha_composite(card, pos)
+    return base
+
+
 def render(spec_path):
     spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
     base = build_base(spec)
     if spec.get("grade"):
         base = grade(base, spec["grade"])
+    base = add_insets(base, spec)
     W, H = base.size
     for e in spec.get("elements", []):
         ELEMENTS[e["type"]](base, e, W, H)

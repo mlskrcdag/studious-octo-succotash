@@ -1,12 +1,17 @@
 {
- "layout": "full",
+ "layout": "stack2",
  "photos": [
-  "photos/sali_asansor.jpg"
+  "photos/sali_asansor.jpg",
+  "photos/sali_toro_hali.jpg"
  ],
  "focus": [
   [
    0.5,
-   0.5
+   0.36
+  ],
+  [
+   0.5,
+   0.42
   ]
  ],
  "grade": {
@@ -19,7 +24,7 @@
    "type": "label",
    "text": "ofis günü edition",
    "x": 0.5,
-   "y": 0.035,
+   "y": 0.03,
    "size": 0.03,
    "color": "white",
    "align": "center",
@@ -29,49 +34,57 @@
    "type": "title",
    "text": "benimle\nbir gün",
    "x": 0.5,
-   "y": 0.145,
-   "size": 0.14
+   "y": 0.14,
+   "size": 0.13
   },
   {
    "type": "caption",
    "text": "sabah 6'da kalkıp sadece çalışan birinin salı günü",
-   "x": 0.5,
-   "y": 0.3,
-   "width": 0.6,
+   "x": 0.7,
+   "y": 0.6,
+   "width": 0.46,
    "shadow": 200
+  },
+  {
+   "type": "hand",
+   "text": "kazaklar uyumlu",
+   "x": 0.74,
+   "y": 0.88,
+   "size": 0.06,
+   "rotate": 0
   },
   {
    "type": "pill",
    "text": "24 Kasım",
    "x": 0.5,
-   "y": 0.93
+   "y": 0.95
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.12,
-   "y": 0.35,
+   "x": 0.1,
+   "y": 0.3,
    "size": 0.03
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.85,
-   "y": 0.42,
+   "x": 0.9,
+   "y": 0.35,
    "size": 0.022
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.2,
-   "y": 0.7,
+   "x": 0.9,
+   "y": 0.75,
    "size": 0.025
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.86,
-   "y": 0.8,
+   "x": 0.15,
+   "y": 0.85,
    "size": 0.03
   }
  ]

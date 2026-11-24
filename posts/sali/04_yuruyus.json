@@ -1,17 +1,12 @@
 {
- "layout": "stack2",
+ "layout": "full",
  "photos": [
-  "photos/sali_podcast.jpg",
   "photos/sali_toro_gece.jpg"
  ],
  "focus": [
   [
-   0.5,
-   0.3
-  ],
-  [
-   0.5,
-   0.45
+   0.38,
+   0.5
   ]
  ],
  "grade": {
@@ -21,48 +16,65 @@
  },
  "elements": [
   {
+   "type": "hand",
+   "text": "yeni bölüm kulağımda",
+   "x": 0.7,
+   "y": 0.52,
+   "size": 0.06,
+   "rotate": 0
+  },
+  {
    "type": "caption",
    "text": "akşam yemeğinde ıspanak, sonrası yürüyüş 🌙",
    "x": 0.5,
-   "y": 0.56,
+   "y": 0.86,
    "width": 0.62,
    "shadow": 200
   },
   {
-   "type": "hand",
-   "text": "yoldayız geliyor musun'un\nyeni bölümü kulağımda",
-   "x": 0.5,
-   "y": 0.9,
-   "size": 0.055,
-   "rotate": 0
-  },
-  {
    "type": "star",
    "style": "twinkle",
-   "x": 0.08,
-   "y": 0.08,
+   "x": 0.1,
+   "y": 0.1,
    "size": 0.025
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.92,
-   "y": 0.4,
+   "x": 0.4,
+   "y": 0.6,
    "size": 0.02
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.85,
+   "x": 0.88,
    "y": 0.7,
    "size": 0.03
   },
   {
    "type": "star",
    "style": "twinkle",
-   "x": 0.12,
+   "x": 0.15,
    "y": 0.72,
    "size": 0.022
+  }
+ ],
+ "insets": [
+  {
+   "photo": "photos/sali_podcast.jpg",
+   "crop": [
+    0.08,
+    0.105,
+    0.92,
+    0.49
+   ],
+   "x": 0.7,
+   "y": 0.25,
+   "w": 0.42,
+   "aspect": 1.0,
+   "rotate": 5,
+   "grade": {}
   }
  ]
 }
