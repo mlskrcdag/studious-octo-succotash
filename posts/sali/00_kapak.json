@@ -111,22 +111,19 @@
    "size": 0.018
   },
   {
-   "type": "button",
+   "type": "crayon",
    "shape": "star",
-   "color": "button_yellow",
-   "x": 0.86,
-   "y": 0.3,
-   "size": 0.192,
-   "tilt": -10
-  },
-  {
-   "type": "button",
-   "shape": "round",
-   "color": "button_pink",
    "x": 0.12,
    "y": 0.8,
-   "size": 0.176,
-   "tilt": 0
+   "size": 0.075
+  },
+  {
+   "type": "crayon",
+   "shape": "bow",
+   "x": 0.86,
+   "y": 0.28,
+   "size": 0.22,
+   "rotate": -6
   }
  ]
 }

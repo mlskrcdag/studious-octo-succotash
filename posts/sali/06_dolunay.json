@@ -32,45 +32,33 @@
    "rotate": 0
   },
   {
-   "type": "star",
-   "style": "twinkle",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.12,
    "y": 0.4,
-   "size": 0.025
+   "size": 0.055
   },
   {
-   "type": "star",
-   "style": "twinkle",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.4,
    "y": 0.55,
-   "size": 0.02
+   "size": 0.055
   },
   {
-   "type": "button",
+   "type": "crayon",
    "shape": "star",
-   "color": "button_lilac",
-   "x": 0.14,
-   "y": 0.3,
-   "size": 0.192,
-   "tilt": -8
-  },
-  {
-   "type": "button",
-   "shape": "round",
-   "color": "button_pink",
    "x": 0.86,
    "y": 0.9,
-   "size": 0.176,
-   "tilt": 0
+   "size": 0.075
   },
   {
-   "type": "button",
-   "shape": "star",
-   "color": "button_yellow",
-   "x": 0.58,
-   "y": 0.93,
-   "size": 0.144,
-   "tilt": 12
+   "type": "crayon",
+   "shape": "bow",
+   "x": 0.18,
+   "y": 0.28,
+   "size": 0.22,
+   "rotate": 6
   }
  ]
 }

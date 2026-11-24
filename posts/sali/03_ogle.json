@@ -32,18 +32,18 @@
    "rotate": -30
   },
   {
-   "type": "star",
-   "style": "twinkle",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.9,
    "y": 0.2,
-   "size": 0.025
+   "size": 0.055
   },
   {
-   "type": "star",
-   "style": "twinkle",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.55,
    "y": 0.45,
-   "size": 0.02
+   "size": 0.055
   },
   {
    "type": "pill",
@@ -52,30 +52,25 @@
    "y": 0.06
   },
   {
-   "type": "button",
-   "shape": "round",
-   "color": "button_blue",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.08,
    "y": 0.56,
-   "size": 0.176,
-   "tilt": 0
+   "size": 0.075
   },
   {
-   "type": "star",
-   "style": "polka",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.92,
    "y": 0.62,
-   "size": 0.09,
-   "rotate": 10
+   "size": 0.075
   },
   {
-   "type": "button",
+   "type": "crayon",
    "shape": "star",
-   "color": "button_yellow",
    "x": 0.45,
    "y": 0.93,
-   "size": 0.16,
-   "tilt": -6
+   "size": 0.075
   }
  ],
  "insets": [

@@ -10,4 +10,4 @@ Emoji: caption sonunda en fazla 1 emoji (kullanıcı yazı yanındaki emojileri 
 
 Düzen: varsayılan tek tam fotoğraf; ikinci foto için polaroid `insets`; `stack2` yalnızca birbirine uyan ikililer için (kullanıcı her şeyi alt alta koymayı sevmedi).
 
-Süs: kullanıcı renkli süs istiyor — slayt başına 2–3 `button` (pastel düğme) + büyük `polka` yıldız, 1–2 twinkle.
+Süs: kullanıcı en çok krem/altın mum boya çizimlerini (`crayon`: star, bow, heart) seviyor — slayt başına 2–4 tane kullan. Düğme sticker'ı sevmedi, kullanma.

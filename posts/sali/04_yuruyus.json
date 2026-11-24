@@ -16,18 +16,18 @@
  },
  "elements": [
   {
-   "type": "star",
-   "style": "twinkle",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.1,
    "y": 0.1,
-   "size": 0.025
+   "size": 0.055
   },
   {
-   "type": "star",
-   "style": "twinkle",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.4,
    "y": 0.6,
-   "size": 0.02
+   "size": 0.055
   },
   {
    "type": "hand",
@@ -54,30 +54,25 @@
    "rotate": 160
   },
   {
-   "type": "button",
-   "shape": "round",
-   "color": "button_pink",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.88,
    "y": 0.42,
-   "size": 0.176,
-   "tilt": 0
+   "size": 0.075
   },
   {
-   "type": "button",
+   "type": "crayon",
    "shape": "star",
-   "color": "button_yellow",
-   "x": 0.12,
-   "y": 0.6,
-   "size": 0.192,
-   "tilt": -10
-  },
-  {
-   "type": "star",
-   "style": "polka",
    "x": 0.85,
    "y": 0.76,
-   "size": 0.105,
-   "rotate": 8
+   "size": 0.075
+  },
+  {
+   "type": "crayon",
+   "shape": "heart",
+   "x": 0.88,
+   "y": 0.55,
+   "size": 0.09
   }
  ],
  "insets": [

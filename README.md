@@ -30,7 +30,6 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
   - `emoji` — tek emoji sticker: `text`, `size`, `rotate`
   - `bubble` — iMessage mesaj balonu (`text`, `top` emojiler, `tail`)
   - `crayon` — krem mum boya çizim: `shape: star | bow | heart`
-  - `button` — 3D pastel düğme sticker (`shape: round | star`, `color`, `size`, `tilt`)
   - `tag` — pembe vurgu etiketi "[ ... ]"; `search` — arama çubuğu; `folder` — pembe klasör ikonu + etiket
   - `title` — büyük pembe sans başlık (`font: sans_bold`, `color: white` ile stil C) (`text` satırları `\n`, `size`, `color`)
   - `hand` — el yazısı not (`text`, `size`, `rotate`, `align`); `checklist: true` ile kutucuklu liste

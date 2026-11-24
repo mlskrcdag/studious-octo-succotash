@@ -83,13 +83,11 @@ Kullanıcı her slaytı alt alta bölmeyi sevmedi; "daha fotoğrafik" istiyor:
 | Klasör ikonu | Pembe masaüstü klasörü, altında "photo dump" | `folder` (`text`, `size`) |
 | Yıldızlar | Çok sayıda küçük beyaz 5 köşeli yıldız, dağınık | `star` + `style: "white"` |
 
-## 10. Renkli sticker'lar (4. referans: "things i'm choosing lately")
-- **3D düğme sticker'ları:** yuvarlak veya yıldız şeklinde, 4 delikli, parlak pastel düğmeler → `button` (`shape: round | star`, `color: button_pink | button_yellow | button_blue | button_lilac | button_mint`, `size`, `tilt`).
-- **Büyük puantiyeli yıldızlar:** krem zemin, siyah noktalar → `star` + `style: polka` (büyük boy, 0.09–0.12).
-- **Pastel çok renkli script başlık:** her kelime ayrı pastel (lila `pastel_lilac`, pembe `pastel_pink`, tereyağı sarısı `pastel_butter`), aralarına küçük sans kelime ("things") → `script` + `color`, `label`.
-- Kullanıcı tercihi: slayt başına 2–3 renkli sticker (düğme + polka yıldız), büyükçe, köşelerde; konu/yüz üstüne değil.
+## 10. Kaldırıldı
+Düğme sticker'ları kullanıcı tarafından beğenilmedi — kullanma.
 
 ## 11. Mesaj balonu + mum boya çizimleri (5. referans: "weekend favorites")
 - **iMessage balonu:** açık gri yuvarlak balon, kuyruklu, siyah sade yazı + sonda ✨; balonun sol üstünde küçük emojiler (💌⭐️) → `bubble` (`text`, `top`, `tail: right | left`, `size`).
 - **Krem/altın mum boya çizimleri:** elle çizilmiş dağınık yıldızlar, puantiyeli fiyonk, kalp → `crayon` (`shape: star | bow | heart`, `size`, `rotate`, `color` varsayılan `crayon` #F4E2A3).
 - Referanstaki kişinin çizgi film karakteri hâli araçla otomatik yapılamaz; istenirse kullanıcının kendi çizimi/sticker'ı `insets` (frame: plain) ile eklenebilir.
+- **Kullanıcı tercihi:** süs olarak bu krem/altın mum boya yıldızları, fiyonk ve kalbi kullan (slayt başına 2–4). Düğme sticker kullanma.

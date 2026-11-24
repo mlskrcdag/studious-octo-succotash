@@ -32,11 +32,6 @@ PALETTE = {
     "pop_pink": "#F7A1B9",
     "tag_bg": "#F9CFDD",
     "crayon": "#F4E2A3",     # stil: krem/altın mum boya çizimleri
-    "button_pink": "#F2B8C6",
-    "button_yellow": "#F6E3A1",
-    "button_blue": "#B9D3EE",
-    "button_lilac": "#D4C5F0",
-    "button_mint": "#BFE3CF",
     "pastel_lilac": "#DCD3F7",
     "pastel_pink": "#F9D4EE",
     "pastel_butter": "#FBF5C4",     # stil C: pembe vurgu etiketi zemini
@@ -623,56 +618,6 @@ def el_folder(base, e, W, H):
     shadowed(base, layer, s * 0.05, e.get("shadow", 80))
 
 
-def el_button(base, e, W, H):
-    """3D dikiş düğmesi sticker'ı: shape = round | star; 4 delikli, parlak, gölgeli.
-    color: pastel (button_pink, button_yellow, button_blue, button_lilac, button_mint) veya hex."""
-    import numpy as np
-    s = int(e.get("size", 0.12) * W)
-    shape = e.get("shape", "round")
-    col = np.array(rgba(e.get("color", "button_pink"))[:3], float)
-    S = s * 2
-    yy, xx = np.mgrid[0:S, 0:S].astype(float)
-    c = S / 2
-    mask = Image.new("L", (S, S), 0)
-    md = ImageDraw.Draw(mask)
-    if shape == "star":
-        pts = _star_points(c, c, S * 0.48, -90 + e.get("rotate", 0), 0.55)
-        md.polygon(pts, fill=255)
-        mask = mask.filter(ImageFilter.GaussianBlur(S * 0.035)).point(lambda v: 255 if v > 110 else 0)
-        mask = mask.filter(ImageFilter.GaussianBlur(1.5))
-    else:
-        md.ellipse([S * 0.03, S * 0.03, S * 0.97, S * 0.97], fill=255)
-    # yükseklik haritası: kenarlara doğru yumuşak düşüş (bulanık maske) -> ışık
-    hmap = np.array(mask.filter(ImageFilter.GaussianBlur(S * 0.06)), float) / 255
-    gy, gx = np.gradient(hmap)
-    light = (-gx - gy) * S * 0.9          # sol-üstten ışık
-    shade = np.clip(1.0 + light * 0.9, 0.72, 1.3)
-    # iç çukur (delikli bölge hafif gömük)
-    r = np.hypot(xx - c, yy - c) / (S / 2)
-    dish = np.where(r < 0.42, 0.94 + 0.06 * (r / 0.42), 1.0)
-    rgb = np.clip(col[None, None, :] * (shade * dish)[..., None], 0, 255)
-    # parlak nokta
-    hl = np.exp(-(((xx - c * 0.62) ** 2 + (yy - c * 0.55) ** 2) / (2 * (S * 0.09) ** 2)))
-    rgb = np.clip(rgb + hl[..., None] * 90, 0, 255)
-    img = Image.fromarray(rgb.astype("uint8"), "RGB").convert("RGBA")
-    img.putalpha(mask)
-    d = ImageDraw.Draw(img)
-    hole_r = S * 0.055
-    off = S * 0.11
-    dark = tuple(int(v * 0.55) for v in col) + (255,)
-    for dx in (-off, off):
-        for dy in (-off, off):
-            d.ellipse([c + dx - hole_r, c + dy - hole_r, c + dx + hole_r, c + dy + hole_r], fill=dark)
-            d.arc([c + dx - hole_r, c + dy - hole_r, c + dx + hole_r, c + dy + hole_r], 200, 340,
-                  fill=(255, 255, 255, 140), width=max(1, int(hole_r * 0.35)))
-    img = img.resize((s, s), Image.LANCZOS)
-    if e.get("tilt"):
-        img = img.rotate(e["tilt"], resample=Image.BICUBIC, expand=True)
-    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
-    layer.alpha_composite(img, (int(e.get("x", 0.5) * W - img.width / 2), int(e.get("y", 0.5) * H - img.height / 2)))
-    shadowed(base, layer, s * 0.06, e.get("shadow", 110))
-
-
 def _crayon(d, pts, ink, lw, seed=0, passes=3):
     """Pastel boya / mum boya hissi: hafif kaydırılmış birkaç ince çizgi."""
     import random
@@ -784,7 +729,7 @@ ELEMENTS = {
     "caption": el_caption, "script": el_script, "label": el_label,
     "clock": el_clock, "star": el_star, "pill": el_pill, "emoji": el_emoji,
     "title": el_title, "hand": el_hand, "doodle": el_doodle,
-    "tag": el_tag, "search": el_search, "folder": el_folder, "button": el_button,
+    "tag": el_tag, "search": el_search, "folder": el_folder,
     "crayon": el_crayon, "bubble": el_bubble,
 }
 

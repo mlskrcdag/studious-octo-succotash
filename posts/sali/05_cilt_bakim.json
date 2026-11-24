@@ -33,18 +33,18 @@
    "shadow": 255
   },
   {
-   "type": "star",
-   "style": "twinkle",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.5,
    "y": 0.25,
-   "size": 0.025
+   "size": 0.055
   },
   {
-   "type": "star",
-   "style": "twinkle",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.15,
    "y": 0.12,
-   "size": 0.02
+   "size": 0.055
   },
   {
    "type": "doodle",
@@ -55,30 +55,25 @@
    "rotate": 20
   },
   {
-   "type": "button",
-   "shape": "round",
-   "color": "button_pink",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.56,
    "y": 0.47,
-   "size": 0.16,
-   "tilt": 0
+   "size": 0.075
   },
   {
-   "type": "star",
-   "style": "polka",
+   "type": "crayon",
+   "shape": "star",
    "x": 0.1,
    "y": 0.95,
-   "size": 0.09,
-   "rotate": -8
+   "size": 0.075
   },
   {
-   "type": "button",
-   "shape": "star",
-   "color": "button_lilac",
+   "type": "crayon",
+   "shape": "heart",
    "x": 0.9,
-   "y": 0.95,
-   "size": 0.16,
-   "tilt": 10
+   "y": 0.5,
+   "size": 0.08
   }
  ],
  "insets": [
