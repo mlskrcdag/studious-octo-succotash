@@ -1,0 +1,83 @@
+{
+ "layout": "stack2",
+ "photos": [
+  "photos/sali_sabah_bakim.jpg",
+  "photos/sali_toro_hali.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.2
+  ],
+  [
+   0.5,
+   0.45
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 5,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "caption",
+   "text": "sabah 6'da kalktık ☀️",
+   "x": 0.8,
+   "y": 0.07,
+   "width": 0.36,
+   "shadow": 200
+  },
+  {
+   "type": "clock",
+   "time": "06:00",
+   "x": 0.8,
+   "y": 0.16,
+   "size": 0.05
+  },
+  {
+   "type": "hand",
+   "text": "sabah rutini",
+   "x": 0.82,
+   "y": 0.32,
+   "size": 0.06,
+   "rotate": 0
+  },
+  {
+   "type": "hand",
+   "text": "toro'yla kısa tur",
+   "x": 0.3,
+   "y": 0.6,
+   "size": 0.06,
+   "rotate": 0
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.9,
+   "y": 0.3,
+   "size": 0.025
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.6,
+   "y": 0.42,
+   "size": 0.02
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.85,
+   "y": 0.7,
+   "size": 0.03
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.15,
+   "y": 0.9,
+   "size": 0.022
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "layout": "stack2",
+ "photos": [
+  "photos/sali_gece_bakim.jpg",
+  "photos/sali_serum.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.55
+  ],
+  [
+   0.5,
+   0.45
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 5,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "caption",
+   "text": "eve gelince cilt bakımı yaptım 🫧",
+   "x": 0.62,
+   "y": 0.08,
+   "width": 0.6,
+   "shadow": 200
+  },
+  {
+   "type": "hand",
+   "text": "bu ürünü çok seviyorum,\nbana ritüel hissettiriyor",
+   "x": 0.62,
+   "y": 0.88,
+   "size": 0.055,
+   "rotate": 0
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.75,
+   "y": 0.22,
+   "size": 0.025
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.92,
+   "y": 0.45,
+   "size": 0.02
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.12,
+   "y": 0.6,
+   "size": 0.03
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.88,
+   "y": 0.7,
+   "size": 0.022
+  }
+ ]
+}

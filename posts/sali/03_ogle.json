@@ -1,0 +1,76 @@
+{
+ "layout": "stack2",
+ "photos": [
+  "photos/sali_hmbrgr_ic.jpg",
+  "photos/sali_hmbrgr_tepsi.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.55
+  ],
+  [
+   0.6,
+   0.5
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 5,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "caption",
+   "text": "öğlen hmbrgr'dan marul burger 🥬",
+   "x": 0.4,
+   "y": 0.08,
+   "width": 0.6,
+   "shadow": 200
+  },
+  {
+   "type": "hand",
+   "text": "marul burger",
+   "x": 0.22,
+   "y": 0.62,
+   "size": 0.065,
+   "rotate": 0
+  },
+  {
+   "type": "doodle",
+   "shape": "arrow",
+   "x": 0.3,
+   "y": 0.7,
+   "size": 0.1,
+   "rotate": -40
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.9,
+   "y": 0.12,
+   "size": 0.025
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.5,
+   "y": 0.45,
+   "size": 0.02
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.85,
+   "y": 0.95,
+   "size": 0.03
+  },
+  {
+   "type": "star",
+   "style": "twinkle",
+   "x": 0.1,
+   "y": 0.88,
+   "size": 0.022
+  }
+ ]
+}
