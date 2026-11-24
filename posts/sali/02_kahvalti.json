@@ -5,8 +5,8 @@
  ],
  "focus": [
   [
-   0.45,
-   0.45
+   0.55,
+   0.55
   ]
  ],
  "grade": {
@@ -16,18 +16,10 @@
  },
  "elements": [
   {
-   "type": "caption",
-   "text": "hiçbir şey yapamayınca yediklerime dikkat ettim",
-   "x": 0.5,
-   "y": 0.12,
-   "width": 0.6,
-   "shadow": 200
-  },
-  {
    "type": "hand",
    "text": "kahvaltıda peynir dolgulu\nwasa aşırı sardı",
    "x": 0.5,
-   "y": 0.82,
+   "y": 0.15,
    "size": 0.065,
    "rotate": 0
   },
@@ -59,5 +51,8 @@
    "y": 0.68,
    "size": 0.022
   }
+ ],
+ "rotate": [
+  180
  ]
 }

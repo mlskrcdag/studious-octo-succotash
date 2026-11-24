@@ -16,14 +16,6 @@
  },
  "elements": [
   {
-   "type": "caption",
-   "text": "öğlen hmbrgr'dan marul burger 🥬",
-   "x": 0.72,
-   "y": 0.08,
-   "width": 0.5,
-   "shadow": 200
-  },
-  {
    "type": "hand",
    "text": "marul burger",
    "x": 0.2,
@@ -66,6 +58,12 @@
    "x": 0.08,
    "y": 0.5,
    "size": 0.022
+  },
+  {
+   "type": "pill",
+   "text": "Vega Center HMBRGR",
+   "x": 0.74,
+   "y": 0.06
   }
  ],
  "insets": [

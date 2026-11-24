@@ -25,11 +25,12 @@
   },
   {
    "type": "hand",
-   "text": "bu ürünü çok seviyorum,\nbana ritüel hissettiriyor",
-   "x": 0.5,
-   "y": 0.91,
+   "text": "bu ürünü çok seviyorum,\nbana ritüel\nhissettiriyor",
+   "x": 0.3,
+   "y": 0.2,
    "size": 0.055,
-   "rotate": 0
+   "rotate": 0,
+   "shadow": 255
   },
   {
    "type": "star",
@@ -58,6 +59,14 @@
    "x": 0.95,
    "y": 0.95,
    "size": 0.022
+  },
+  {
+   "type": "doodle",
+   "shape": "arrow",
+   "x": 0.42,
+   "y": 0.31,
+   "size": 0.12,
+   "rotate": 20
   }
  ],
  "insets": [

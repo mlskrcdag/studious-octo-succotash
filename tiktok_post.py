@@ -137,6 +137,8 @@ def straighten(img, deg):
     """Fotoğrafı deg derece döndür (+ saat yönünün tersi), boş köşeleri kırp."""
     if not deg:
         return img
+    if deg % 90 == 0:
+        return img.rotate(deg, expand=True)
     w, h = img.size
     r = img.rotate(deg, resample=Image.BICUBIC)
     t = math.radians(abs(deg))
