@@ -31,6 +31,7 @@ PALETTE = {
     "star_yellow": "#FFD34E",
     "pop_pink": "#F7A1B9",
     "tag_bg": "#F9CFDD",
+    "crayon": "#F4E2A3",     # stil: krem/altın mum boya çizimleri
     "button_pink": "#F2B8C6",
     "button_yellow": "#F6E3A1",
     "button_blue": "#B9D3EE",
@@ -672,11 +673,119 @@ def el_button(base, e, W, H):
     shadowed(base, layer, s * 0.06, e.get("shadow", 110))
 
 
+def _crayon(d, pts, ink, lw, seed=0, passes=3):
+    """Pastel boya / mum boya hissi: hafif kaydırılmış birkaç ince çizgi."""
+    import random
+    rnd = random.Random(seed)
+    for k in range(passes):
+        j = lw * 0.6
+        q = [(x + rnd.uniform(-j, j), y + rnd.uniform(-j, j)) for x, y in pts]
+        a = ink[:3] + (int(ink[3] * (0.95 if k == 0 else 0.55)),)
+        d.line(q, fill=a, width=max(1, int(lw * (1 if k == 0 else 0.6))), joint="curve")
+
+
+def _catmull(pts, n=24):
+    out = []
+    P = [pts[0]] + pts + [pts[-1]]
+    for k in range(1, len(P) - 2):
+        p0, p1, p2, p3 = P[k - 1], P[k], P[k + 1], P[k + 2]
+        for t in [i / n for i in range(n)]:
+            t2, t3 = t * t, t * t * t
+            out.append(tuple(0.5 * ((2 * p1[c]) + (-p0[c] + p2[c]) * t + (2 * p0[c] - 5 * p1[c] + 4 * p2[c] - p3[c]) * t2
+                                    + (-p0[c] + 3 * p1[c] - 3 * p2[c] + p3[c]) * t3) for c in (0, 1)))
+    out.append(pts[-1])
+    return out
+
+
+def el_crayon(base, e, W, H):
+    """Mum boya çizimleri (krem/altın): shape = star (elle çizilmiş yıldız) | bow (puantiyeli fiyonk) | heart."""
+    kind = e.get("shape", "star")
+    s = e.get("size", 0.08) * W
+    cx, cy = e.get("x", 0.5) * W, e.get("y", 0.5) * H
+    ink = rgba(e.get("color", "crayon"))
+    lw = max(2, int(e.get("width", 0.007) * W))
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    P = lambda u, v: (cx + u * s, cy + v * s)
+    seed = int(cx + cy)
+    if kind == "star":
+        # tek çizgiyle çizilmiş, uçları üst üste binen yıldız
+        pts = []
+        for i in range(6):
+            a = math.radians(-90 + i * 144 + (i * 7 % 5))
+            pts.append(P(0.5 * math.cos(a), 0.5 * math.sin(a)))
+        pts.append(P(0.5 * math.cos(math.radians(-80)), 0.5 * math.sin(math.radians(-80)) + 0.06))
+        _crayon(d, pts, ink, lw, seed)
+    elif kind == "heart":
+        pts = _catmull([P(0, 0.42), P(-0.42, 0.02), P(-0.36, -0.3), P(-0.08, -0.32), P(0, -0.1),
+                        P(0.08, -0.32), P(0.36, -0.3), P(0.42, 0.02), P(0.03, 0.4)])
+        _crayon(d, pts, ink, lw, seed)
+    elif kind == "bow":
+        knot = (0, -0.25)
+        loops = [
+            [P(*knot), P(-0.2, -0.5), P(-0.48, -0.55), P(-0.5, -0.3), P(-0.3, -0.2), P(*knot)],
+            [P(*knot), P(0.2, -0.52), P(0.46, -0.5), P(0.48, -0.28), P(0.25, -0.18), P(*knot)],
+            [P(*knot), P(-0.1, 0.0), P(-0.22, 0.3), P(-0.3, 0.55)],
+            [P(-0.3, 0.55), P(-0.18, 0.5), P(-0.12, 0.56)],
+            [P(*knot), P(0.12, 0.05), P(0.18, 0.32), P(0.3, 0.5)],
+            [P(0.3, 0.5), P(0.2, 0.48), P(0.16, 0.54)],
+        ]
+        curves = [_catmull(l) for l in loops]
+        for i, cpts in enumerate(curves):
+            _crayon(d, cpts, ink, lw, seed + i)
+        d.ellipse([P(-0.05, -0.3)[0], P(-0.05, -0.3)[1], P(0.05, -0.2)[0], P(0.05, -0.2)[1]], outline=ink, width=lw)
+        import random
+        rnd = random.Random(seed)
+        # noktalar sadece fiyonk şeritlerinin içinde: çizgilerin yanına serpiştir
+        for cpts in curves[:2]:
+            ccx = sum(p[0] for p in cpts) / len(cpts); ccy = sum(p[1] for p in cpts) / len(cpts)
+            for _ in range(10):
+                px_, py_ = cpts[rnd.randrange(len(cpts))]
+                t = rnd.uniform(0.2, 0.75)
+                x, y = px_ + (ccx - px_) * t, py_ + (ccy - py_) * t
+                r = lw * 0.5
+                d.ellipse([x - r, y - r, x + r, y + r], fill=ink[:3] + (210,))
+    if e.get("rotate"):
+        layer = layer.rotate(e["rotate"], resample=Image.BICUBIC, center=(cx, cy))
+    shadowed(base, layer, lw, e.get("shadow", 60))
+
+
+def el_bubble(base, e, W, H):
+    """iMessage tarzı mesaj balonu: açık gri yuvarlak kutu + kuyruk, siyah yazı,
+    sol üstünde küçük emoji(ler) (`top`)."""
+    f = font("sans", e.get("size", 0.04) * W)
+    txt = e["text"]
+    tw = text_width(txt, f)
+    asc, desc = f.getmetrics()
+    px, py = f.size * 0.75, f.size * 0.45
+    w, h = tw + px * 2, asc + desc + py * 2
+    x0 = e.get("x", 0.5) * W - w / 2
+    y0 = e.get("y", 0.3) * H - h / 2
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    bg = rgba(e.get("bg", "#E9E9EB"))
+    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=bg)
+    side = e.get("tail", "right")
+    if side == "right":
+        tx = x0 + w - h * 0.25
+        d.polygon([(tx - h * 0.2, y0 + h * 0.6), (tx + h * 0.35, y0 + h * 1.02), (tx + h * 0.05, y0 + h * 0.85),
+                   (tx - h * 0.1, y0 + h * 0.95)], fill=bg)
+    else:
+        tx = x0 + h * 0.25
+        d.polygon([(tx + h * 0.2, y0 + h * 0.6), (tx - h * 0.35, y0 + h * 1.02), (tx - h * 0.05, y0 + h * 0.85),
+                   (tx + h * 0.1, y0 + h * 0.95)], fill=bg)
+    draw_line(layer, (x0 + px, y0 + py), txt, f, rgba(e.get("color", "#111111")))
+    if e.get("top"):
+        draw_line(layer, (x0 + h * 0.1, y0 - f.size * 0.95), e["top"], font("sans", f.size * 0.8), (0, 0, 0, 255))
+    shadowed(base, layer, h * 0.1, e.get("shadow", 40))
+
+
 ELEMENTS = {
     "caption": el_caption, "script": el_script, "label": el_label,
     "clock": el_clock, "star": el_star, "pill": el_pill, "emoji": el_emoji,
     "title": el_title, "hand": el_hand, "doodle": el_doodle,
     "tag": el_tag, "search": el_search, "folder": el_folder, "button": el_button,
+    "crayon": el_crayon, "bubble": el_bubble,
 }
 
 

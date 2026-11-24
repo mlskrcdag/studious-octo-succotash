@@ -28,6 +28,8 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
   - `pill` — konum/ay hapı, `icon: true/false`
 - `insets`: ana fotoğrafın üstüne polaroid kart(lar) — `photo, x, y, w, aspect, rotate, crop [l,t,r,b], focus, frame (polaroid | rounded | plain)`
   - `emoji` — tek emoji sticker: `text`, `size`, `rotate`
+  - `bubble` — iMessage mesaj balonu (`text`, `top` emojiler, `tail`)
+  - `crayon` — krem mum boya çizim: `shape: star | bow | heart`
   - `button` — 3D pastel düğme sticker (`shape: round | star`, `color`, `size`, `tilt`)
   - `tag` — pembe vurgu etiketi "[ ... ]"; `search` — arama çubuğu; `folder` — pembe klasör ikonu + etiket
   - `title` — büyük pembe sans başlık (`font: sans_bold`, `color: white` ile stil C) (`text` satırları `\n`, `size`, `color`)
