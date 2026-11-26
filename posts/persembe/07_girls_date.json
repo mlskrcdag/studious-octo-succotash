@@ -1,0 +1,83 @@
+{
+ "layout": "full",
+ "photos": [
+  "photos/prs_park_gece.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.5
+  ]
+ ],
+ "grade": {
+  "brightness": 1.05,
+  "warmth": 5,
+  "fade": 12
+ },
+ "insets": [
+  {
+   "photo": "photos/prs_sokak_sanati.jpg",
+   "x": 0.27,
+   "y": 0.2,
+   "w": 0.36,
+   "aspect": 1.2,
+   "rotate": -6
+  },
+  {
+   "photo": "photos/prs_icecek.jpg",
+   "x": 0.74,
+   "y": 0.74,
+   "w": 0.36,
+   "aspect": 1.2,
+   "rotate": 6
+  }
+ ],
+ "elements": [
+  {
+   "type": "pill",
+   "text": "Soul Pub",
+   "x": 0.74,
+   "y": 0.06
+  },
+  {
+   "type": "caption",
+   "text": "tunalı'da girls date 🍻",
+   "x": 0.74,
+   "y": 0.15,
+   "width": 0.44,
+   "shadow": 230
+  },
+  {
+   "type": "crayon",
+   "shape": "star",
+   "x": 0.6,
+   "y": 0.3,
+   "size": 0.07,
+   "rotate": 0
+  },
+  {
+   "type": "crayon",
+   "shape": "heart",
+   "x": 0.12,
+   "y": 0.62,
+   "size": 0.08,
+   "rotate": 0
+  },
+  {
+   "type": "crayon",
+   "shape": "star",
+   "x": 0.4,
+   "y": 0.9,
+   "size": 0.07,
+   "rotate": 0
+  },
+  {
+   "type": "crayon",
+   "shape": "star",
+   "x": 0.92,
+   "y": 0.42,
+   "size": 0.06,
+   "rotate": 0
+  }
+ ]
+}
