@@ -182,7 +182,7 @@ def load(path):
 
 
 def build_base(spec):
-    W, H = spec.get("size", [1080, 1440])
+    W, H = spec.get("size", [1440, 1920])
     layout = spec.get("layout", "full")
     photos = spec["photos"]
     foc = spec.get("focus", [[0.5, 0.5]] * len(photos))
@@ -829,7 +829,10 @@ def render(spec_path):
         ELEMENTS[e["type"]](base, e, W, H)
     out = ROOT / "output" / (Path(spec_path).stem + ".jpg")
     out.parent.mkdir(exist_ok=True)
-    base.convert("RGB").save(out, quality=95)
+    final = base.convert("RGB")
+    if spec.get("sharpen", True):
+        final = final.filter(ImageFilter.UnsharpMask(radius=1.6, percent=55, threshold=2))
+    final.save(out, quality=98, subsampling=0)
     print("✓", out.relative_to(ROOT))
     return out
 

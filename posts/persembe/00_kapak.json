@@ -10,9 +10,10 @@
   ]
  ],
  "grade": {
-  "brightness": 1.03,
-  "warmth": 5,
-  "fade": 12
+  "brightness": 1.04,
+  "warmth": 4,
+  "fade": 5,
+  "contrast": 1.04
  },
  "elements": [
   {
