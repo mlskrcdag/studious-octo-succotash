@@ -16,6 +16,7 @@ Fotoğraflarını referans "day in my life" stiline göre düzenleyen küçük a
 ## JSON alanları
 - `layout`: `full` | `stack2` | `top_split` | `stack3` (üç yatay bant, `splits: [0.28, 0.44, 0.28]`); `split`: bölme oranı (0.5)
 - `keystone`: her foto için perspektif düzeltme — eğik çekilmiş dikdörtgen nesnenin köşeleri `[[sol-üst],[sağ-üst],[sağ-alt],[sol-alt]]` (piksel) ya da `null`
+- `crop`: her foto için `[l,t,r,b]` (0–1) ya da `null` — ör. üstte istenmeyen ayna yansımasını kesmek için
 - `rotate`: her foto için düzeltme açısı (derece, eğik nesneyi düzeltmek için; ör. `[-7, 0]`)
 - `photos`: dosya yolları; `focus`: her foto için kırpma merkezi `[x, y]` (0–1)
 - `grade`: `brightness`, `contrast`, `saturation`, `warmth`, `fade`

@@ -189,7 +189,14 @@ def build_base(spec):
     rots = spec.get("rotate", [0] * len(photos))
     _load = load
     quads = spec.get("keystone", [None] * len(photos))
-    load_r = lambda i: straighten(keystone(_load(photos[i]), quads[i]), rots[i])
+    crops = spec.get("crop", [None] * len(photos))
+
+    def load_r(i):
+        im = straighten(keystone(_load(photos[i]), quads[i]), rots[i])
+        if crops[i]:
+            l, t, r, b = crops[i]
+            im = im.crop((int(l * im.width), int(t * im.height), int(r * im.width), int(b * im.height)))
+        return im
     canvas = Image.new("RGB", (W, H), "white")
     split = spec.get("split", 0.5)
     if layout == "full":

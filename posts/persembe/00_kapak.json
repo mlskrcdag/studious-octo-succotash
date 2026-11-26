@@ -1,0 +1,91 @@
+{
+ "layout": "full",
+ "photos": [
+  "photos/prs_agac.jpg"
+ ],
+ "focus": [
+  [
+   0.5,
+   0.5
+  ]
+ ],
+ "grade": {
+  "brightness": 1.03,
+  "warmth": 5,
+  "fade": 12
+ },
+ "elements": [
+  {
+   "type": "folder",
+   "text": "photo dump",
+   "x": 0.16,
+   "y": 0.1,
+   "size": 0.14
+  },
+  {
+   "type": "title",
+   "text": "benimle\nbir gün",
+   "font": "sans_bold",
+   "color": "white",
+   "x": 0.5,
+   "y": 0.48,
+   "size": 0.2,
+   "line_height": 0.92,
+   "shadow": 110
+  },
+  {
+   "type": "tag",
+   "text": "ev ofisi",
+   "x": 0.26,
+   "y": 0.4,
+   "size": 0.04,
+   "rotate": -3
+  },
+  {
+   "type": "tag",
+   "text": "& akşam planı",
+   "x": 0.7,
+   "y": 0.58,
+   "size": 0.04,
+   "rotate": 3
+  },
+  {
+   "type": "pill",
+   "text": "26 Kasım",
+   "x": 0.5,
+   "y": 0.92
+  },
+  {
+   "type": "crayon",
+   "shape": "star",
+   "x": 0.85,
+   "y": 0.12,
+   "size": 0.09,
+   "rotate": 0
+  },
+  {
+   "type": "crayon",
+   "shape": "star",
+   "x": 0.12,
+   "y": 0.68,
+   "size": 0.08,
+   "rotate": 0
+  },
+  {
+   "type": "crayon",
+   "shape": "heart",
+   "x": 0.88,
+   "y": 0.75,
+   "size": 0.07,
+   "rotate": 0
+  },
+  {
+   "type": "crayon",
+   "shape": "star",
+   "x": 0.4,
+   "y": 0.2,
+   "size": 0.06,
+   "rotate": 0
+  }
+ ]
+}
