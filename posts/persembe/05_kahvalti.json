@@ -17,50 +17,41 @@
  "elements": [
   {
    "type": "caption",
-   "text": "kahvaltılandım, basic 🥚",
-   "x": 0.7,
-   "y": 0.12,
-   "width": 0.5,
-   "shadow": 200
+   "text": "basic bir kahvaltı, akşam dışarı çıkacağım için gün içi dikkat ettim 🥚",
+   "x": 0.13,
+   "y": 0.08,
+   "width": 0.78,
+   "align": "left",
+   "size": 0.044,
+   "shadow": 220
   },
   {
    "type": "clock",
    "time": "12:30",
-   "x": 0.7,
-   "y": 0.2,
-   "size": 0.05
+   "x": 0.22,
+   "y": 0.21,
+   "size": 0.048
   },
   {
-   "type": "hand",
-   "text": "akşam dışarı çıkacağım için\ngün içi dikkat ettim",
-   "x": 0.35,
-   "y": 0.95,
-   "size": 0.052,
-   "rotate": 0
-  },
-  {
-   "type": "crayon",
-   "shape": "star",
-   "x": 0.1,
-   "y": 0.12,
-   "size": 0.07,
-   "rotate": 0
-  },
-  {
-   "type": "crayon",
-   "shape": "heart",
-   "x": 0.92,
-   "y": 0.32,
-   "size": 0.07,
-   "rotate": 0
+   "type": "star",
+   "style": "white",
+   "x": 0.93,
+   "y": 0.45,
+   "size": 0.022
   },
   {
    "type": "crayon",
    "shape": "star",
    "x": 0.08,
    "y": 0.68,
-   "size": 0.07,
-   "rotate": 0
+   "size": 0.07
+  },
+  {
+   "type": "crayon",
+   "shape": "heart",
+   "x": 0.1,
+   "y": 0.2,
+   "size": 0.06
   }
  ]
 }

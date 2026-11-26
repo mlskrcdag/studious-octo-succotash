@@ -411,7 +411,7 @@ def el_pill(base, e, W, H):
     tw = text_width(text, f)
     w = tw + pad_x * 2 + icon_w
     h = f.size * 1.2 + pad_y * 2
-    x0 = e.get("x", 0.5) * W - w / 2
+    x0 = e.get("x", 0.5) * W - (0 if e.get("align") == "left" else w / 2)
     y0 = e.get("y", 0.9) * H - h / 2
     layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)

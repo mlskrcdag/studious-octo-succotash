@@ -91,3 +91,10 @@ Düğme sticker'ları kullanıcı tarafından beğenilmedi — kullanma.
 - **Krem/altın mum boya çizimleri:** elle çizilmiş dağınık yıldızlar, puantiyeli fiyonk, kalp → `crayon` (`shape: star | bow | heart`, `size`, `rotate`, `color` varsayılan `crayon` #F4E2A3).
 - Referanstaki kişinin çizgi film karakteri hâli araçla otomatik yapılamaz; istenirse kullanıcının kendi çizimi/sticker'ı `insets` (frame: plain) ile eklenebilir.
 - **Kullanıcı tercihi:** süs olarak bu krem/altın mum boya yıldızları, fiyonk ve kalbi kullan (slayt başına 2–4). Düğme sticker kullanma.
+
+## 12. Sade "vlog story" düzeni (6. referans seti — kullanıcı tercihi, 26 Kasım)
+- Polaroid/çerçeveli foto (`insets`) **bu tarzda kullanma**; kullanıcı beğenmedi.
+- Birden fazla foto: kenar boşluksuz `stack2` / `stack3` bantlar (veya tek tam foto).
+- Caption: beyaz, sade, **sola yaslı** (`align: left`, x≈0.06–0.13), size ≈0.044; foto birleşim çizgisine değil, bir fotonun içine.
+- Konum: BÜYÜK HARF yarı saydam pin hapı, caption'ın hemen altında, sola yaslı (`pill` + `align: left`).
+- Süsler (mum boya yıldız/kalp, beyaz küçük yıldız, şeffaf saat) korunur.
