@@ -17,13 +17,16 @@
  "elements": [
   {
    "type": "caption",
-   "text": "basic bir kahvaltı, akşam dışarı çıkacağım için gün içi dikkat ettim 🥚",
+   "text": "basic bir kahvaltı, akşam dışarı çıkacağım için gün içi dikkat ettim",
    "x": 0.13,
    "y": 0.08,
    "width": 0.78,
    "align": "left",
-   "size": 0.044,
-   "shadow": 220
+   "size": 0.046,
+   "shadow": 255,
+   "font": "sans_bold",
+   "backdrop": 55,
+   "outline": true
   },
   {
    "type": "clock",

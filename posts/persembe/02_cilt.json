@@ -17,13 +17,16 @@
  "elements": [
   {
    "type": "caption",
-   "text": "sabah cilt bakımı 🫧",
+   "text": "sabah cilt bakımı",
    "x": 0.13,
    "y": 0.84,
    "width": 0.72,
    "align": "left",
-   "size": 0.044,
-   "shadow": 170
+   "size": 0.046,
+   "shadow": 255,
+   "font": "sans_bold",
+   "backdrop": 55,
+   "outline": true
   },
   {
    "type": "clock",

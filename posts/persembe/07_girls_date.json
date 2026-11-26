@@ -27,13 +27,16 @@
  "elements": [
   {
    "type": "caption",
-   "text": "tunalı'da girls date 🍻",
+   "text": "tunalı'da girls date",
    "x": 0.13,
    "y": 0.4,
    "width": 0.72,
    "align": "left",
-   "size": 0.044,
-   "shadow": 170
+   "size": 0.046,
+   "shadow": 255,
+   "font": "sans_bold",
+   "backdrop": 55,
+   "outline": true
   },
   {
    "type": "pill",
@@ -42,7 +45,7 @@
    "y": 0.475,
    "align": "left",
    "size": 0.042,
-   "alpha": 90
+   "alpha": 120
   },
   {
    "type": "star",

@@ -95,6 +95,6 @@ Düğme sticker'ları kullanıcı tarafından beğenilmedi — kullanma.
 ## 12. Sade "vlog story" düzeni (6. referans seti — kullanıcı tercihi, 26 Kasım)
 - Polaroid/çerçeveli foto (`insets`) **bu tarzda kullanma**; kullanıcı beğenmedi.
 - Birden fazla foto: kenar boşluksuz `stack2` / `stack3` bantlar (veya tek tam foto).
-- Caption: beyaz, sade, **sola yaslı** (`align: left`, x≈0.06–0.13), size ≈0.044; foto birleşim çizgisine değil, bir fotonun içine.
+- Caption: beyaz, **kalın (`font: sans_bold`), emojisiz, `backdrop: 55`, `outline: true`, `shadow: 255`** (kullanıcı daha belirgin istedi), **sola yaslı** (`align: left`, x≈0.06–0.13), size ≈0.044; foto birleşim çizgisine değil, bir fotonun içine.
 - Konum: BÜYÜK HARF yarı saydam pin hapı, caption'ın hemen altında, sola yaslı (`pill` + `align: left`).
 - Süsler (mum boya yıldız/kalp, beyaz küçük yıldız, şeffaf saat) korunur.

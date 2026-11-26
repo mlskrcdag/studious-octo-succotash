@@ -254,7 +254,20 @@ def el_caption(base, e, W, H):
         else:
             x = cx - tw / 2
         draw_line(layer, (x, cy - block_h / 2 + i * lh), ln, f, rgba(e.get("color", "white")))
-    shadowed(base, layer, f.size * 0.25, e.get("shadow", 90))
+    if e.get("backdrop"):
+        # yazının arkasına yumuşak koyu hale: açık/karışık zeminlerde okunurluk
+        a = layer.getchannel("A").filter(ImageFilter.MaxFilter(int(f.size * 0.5) | 1))
+        a = a.filter(ImageFilter.GaussianBlur(f.size * 0.9)).point(lambda v: min(255, int(v * e["backdrop"] / 100)))
+        halo = Image.new("RGBA", base.size, (0, 0, 0, 0))
+        halo.putalpha(a)
+        base.alpha_composite(halo)
+    if e.get("outline"):
+        # çok ince koyu kontur: harf kenarlarını netleştirir
+        a = layer.getchannel("A").filter(ImageFilter.MaxFilter(3)).point(lambda v: int(v * 0.35))
+        ol = Image.new("RGBA", base.size, (0, 0, 0, 0))
+        ol.putalpha(a)
+        base.alpha_composite(ol)
+    shadowed(base, layer, f.size * 0.18, e.get("shadow", 90))
 
 
 def el_script(base, e, W, H):

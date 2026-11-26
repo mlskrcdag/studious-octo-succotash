@@ -22,13 +22,16 @@
  "elements": [
   {
    "type": "caption",
-   "text": "akşam ekibi, iyi geceler 🌙",
+   "text": "akşam ekibi, iyi geceler",
    "x": 0.13,
    "y": 0.585,
    "width": 0.72,
    "align": "left",
-   "size": 0.044,
-   "shadow": 230
+   "size": 0.046,
+   "shadow": 255,
+   "font": "sans_bold",
+   "backdrop": 55,
+   "outline": true
   },
   {
    "type": "star",

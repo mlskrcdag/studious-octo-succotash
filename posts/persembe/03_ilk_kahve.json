@@ -22,13 +22,16 @@
  "elements": [
   {
    "type": "caption",
-   "text": "günün ilk kahvesi, içine biraz tarçın ☕️",
+   "text": "günün ilk kahvesi, içine biraz tarçın",
    "x": 0.13,
    "y": 0.585,
    "width": 0.78,
    "align": "left",
-   "size": 0.044,
-   "shadow": 230
+   "size": 0.046,
+   "shadow": 255,
+   "font": "sans_bold",
+   "backdrop": 55,
+   "outline": true
   },
   {
    "type": "clock",
@@ -55,7 +58,7 @@
    "type": "crayon",
    "shape": "heart",
    "x": 0.9,
-   "y": 0.6,
+   "y": 0.7,
    "size": 0.06
   }
  ]

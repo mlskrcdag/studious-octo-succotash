@@ -17,13 +17,16 @@
  "elements": [
   {
    "type": "caption",
-   "text": "çalışmaya başlayalım 💻",
+   "text": "çalışmaya başlayalım",
    "x": 0.13,
    "y": 0.12,
    "width": 0.72,
    "align": "left",
-   "size": 0.044,
-   "shadow": 170
+   "size": 0.046,
+   "shadow": 255,
+   "font": "sans_bold",
+   "backdrop": 55,
+   "outline": true
   },
   {
    "type": "clock",
